@@ -1,0 +1,65 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\repos\\MinionBot5.Language\\src\\Language\\Language.csproj": {}
+  },
+  "projects": {
+    "E:\\repos\\MinionBot5.Language\\src\\Language\\Language.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\repos\\MinionBot5.Language\\src\\Language\\Language.csproj",
+        "projectName": "Language",
+        "projectPath": "E:\\repos\\MinionBot5.Language\\src\\Language\\Language.csproj",
+        "packagesPath": "C:\\Users\\devhl\\.nuget\\packages\\",
+        "outputPath": "E:\\repos\\MinionBot5.Language\\src\\Language\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\devhl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/discord-net/api/v3/index.json": {},
+          "https://www.myget.org/F/qmmands/api/v3/index.json": {},
+          "https://www.myget.org/F/quahu/api/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

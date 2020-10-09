@@ -1,0 +1,9 @@
+E:\repos\MinionBotLanguages\MinionBotLanguages\bin\Release\netstandard2.0\MinionBotLanguages.deps.json
+E:\repos\MinionBotLanguages\MinionBotLanguages\bin\Release\netstandard2.0\MinionBotLanguages.dll
+E:\repos\MinionBotLanguages\MinionBotLanguages\bin\Release\netstandard2.0\MinionBotLanguages.pdb
+E:\repos\MinionBotLanguages\MinionBotLanguages\obj\Release\netstandard2.0\MinionBotLanguages.AssemblyInfoInputs.cache
+E:\repos\MinionBotLanguages\MinionBotLanguages\obj\Release\netstandard2.0\MinionBotLanguages.AssemblyInfo.cs
+E:\repos\MinionBotLanguages\MinionBotLanguages\obj\Release\netstandard2.0\MinionBotLanguages.csproj.CoreCompileInputs.cache
+E:\repos\MinionBotLanguages\MinionBotLanguages\obj\Release\netstandard2.0\MinionBotLanguages.dll
+E:\repos\MinionBotLanguages\MinionBotLanguages\obj\Release\netstandard2.0\MinionBotLanguages.pdb
+E:\repos\MinionBotLanguages\MinionBotLanguages\obj\Release\netstandard2.0\MinionBotLanguages.csprojAssemblyReference.cache

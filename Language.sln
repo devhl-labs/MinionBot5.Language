@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Language", "src\MinionBot.Language\MinionBot.Language.csproj", "{C956CBC0-7CF0-486E-860E-4826D8080BD9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C956CBC0-7CF0-486E-860E-4826D8080BD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C956CBC0-7CF0-486E-860E-4826D8080BD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C956CBC0-7CF0-486E-860E-4826D8080BD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C956CBC0-7CF0-486E-860E-4826D8080BD9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C4652D58-5332-4A75-A30E-2B402E2234B0}
+	EndGlobalSection
+EndGlobal
