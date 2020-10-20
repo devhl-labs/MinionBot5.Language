@@ -1,8 +1,12 @@
-﻿namespace MinionBot.Language
+﻿using System.Collections.Generic;
+
+namespace MinionBot.Language
 {
     public interface ILanguage
     {
         string Name { get; }
+
+        string Aliases { get; }
 
         string AliasesMayNotContainSomeCharacters { get; }
         string AlreadySponsored { get; }
@@ -116,5 +120,22 @@
         string YouHaveClaimed(string villageTag, string villageName);
         string YourAliasIsNow(string villageTag, string villageName, string alias);
         string YourLanguageHasBeenChangedTo(string language);
+
+        string BecomeAPatronToUseThisCommand { get; }
+        string IncludeTheLeagueYouWouldLikeToSee { get; }
+
+        string WarEndWarningsDisabled { get; }
+
+        string WarEndWarningsEnabled { get; }
+
+        string WarStartWarningsDisabled { get; }
+
+        string WarStartWarningsEnabled { get; }
+
+        string IncorrectParametersOrMissingPermission { get; }
+
+        string CommandNameIsAPlaceHolder { get; }
+
+        List<CommandInfo> Commands { get; }
     }
 }
