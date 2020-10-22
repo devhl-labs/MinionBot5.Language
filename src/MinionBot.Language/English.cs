@@ -454,7 +454,8 @@ If you're having trouble using the name of the village, try using the village ta
 Especially useful after you change a village name in game.
 Aliases should be unique, so you should only have to provide this comand the alias name.", 
                 "aliasToDelete", 
-                "#villageTag aliasToDelete"),
+                "#villageTag aliasToDelete",
+                "#villageTag \"all\""),
             new CommandInfo(5, "getalias", "View all nicknames for a village.",
                 "#villageTag",
                 "@discordMention",
@@ -678,7 +679,8 @@ You must put the letters 'mb' after the clan description for this to work.",
 @"You may remove a clan from your server.
 To add it back, you will need to add 'mb' to the description again.", 
                 "none",
-                "#clanTag"),
+                "#clanTag",
+                "\"all\" #clanTag"),
             new CommandInfo(9, "defaultclan",
 @"Allows you to tell Minion Bot which clan to use in channels where claimclan has never been ran.
 You may run this after running claimclan.
