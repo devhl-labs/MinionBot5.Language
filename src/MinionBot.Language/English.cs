@@ -191,7 +191,7 @@ namespace MinionBot.Language
             $"```See a war that is missing ?\n\nIf it's your war, use the command requestleague {leagueInitials}.\n\nOtherwise, you can join the support server and tag your league's rep.\n\nWant to help update this league?\n\nJoin the support server to get the role.```";
 
         public string OnlyMembersOfThisClanCanSeeThis(string clanTag, string clanName)
-            => $"Only members of {clanTag} {clanName} this clan can see this.";
+            => $"Only members of {clanTag} {clanName} can see this.";
 
         public string ThisWarIsAlreadyInALeague
             => "This war is already in a league.";
