@@ -199,6 +199,9 @@ namespace MinionBot.Language
         public string NoParticipatingClanFound(string dbParticipantName, string leagueInitials, int season)
             => $"No participating clan with name {dbParticipantName} where found in {leagueInitials} season {season}.";
 
+        public string NoParticipants(string leagueInitials, int season)
+            => $"There are no clans in {leagueInitials} season {season}.";
+
         public string ThisLeagueHasNoDivisions
             => "This league has no divisions.";
 
@@ -357,6 +360,8 @@ namespace MinionBot.Language
 
         public string CommandNameIsAPlaceHolder
             => "Command name is a place holder. Replace it with the name of a command.";
+        public string YouHaveHiddenXAttacks(int count)
+            => $"You have hidden {count} attacks.";
 
         public List<CommandInfo> Commands { get; } = new List<CommandInfo>
         {
@@ -599,6 +604,11 @@ A league rep will need to approve it.",
 This includes attacks and defenses done before you claimed the village.
 **This cannot be undone.**",
                 "#villageTag"),
+            new CommandInfo(7, "hideattacks", 
+@"This will hide any attack that you have claimed. You must be a master patron to use this command. Your attacks are claimed by having the village claimed while the attack occurs or throught the claimattacks command.",
+                "none",
+                "#villageTag",
+                "olderThanXMonthsAgo"),
             new CommandInfo(7, "roster", "View a summary of the villages in a given war.", 
                 "none",
                 "warId"),

@@ -91,6 +91,7 @@ namespace MinionBot.Language
         string NoAttacksLeft(string enemyClanTag, string enemyClanName);
         string NoLeagueWarsFoundInLastSixDays(string leagueInitials);
         string NoParticipatingClanFound(string dbParticipantName, string leagueInitials, int season);
+        string NoParticipants(string leagueInitials, int season);
         string NowRenamingChannel(string clanTag, string clanName, int position);
         string OnlyMembersOfThisClanCanSeeThis(string clanTag, string clanName);
         string RolesWillBeUpdated(int roles);
@@ -135,6 +136,7 @@ namespace MinionBot.Language
         string IncorrectParametersOrMissingPermission { get; }
 
         string CommandNameIsAPlaceHolder { get; }
+        string YouHaveHiddenXAttacks(int count);
 
         List<CommandInfo> Commands { get; }
     }
