@@ -11,6 +11,12 @@ namespace MinionBot.Language
 
         public string Aliases { get; } = "english,en,🇺🇸,🇬🇧";
 
+        public string QuotedParametersAreTypedAsShown
+            => "Quoted parameters are typed as shown.";
+
+        public string BracketedParametersAreOptional
+            => "Bracketed paramters are optional.";
+
         public string MustBeRanInGuild
             => "This command must be ran in a server";
 
@@ -74,7 +80,7 @@ namespace MinionBot.Language
             => "Village not found";
 
         public string YourClanCouldNotBeDetermined
-            => "Your clan could not be determined.";  //todo looks like AnErrorOccuredLocatingYourClan
+            => "Your clan could not be determined.";  
 
         public string YouMustBeACoLeaderToUnclaimAVillage
             => "You must be a coleader or have manage channels permission to unclaim a village.";
@@ -117,9 +123,6 @@ namespace MinionBot.Language
 
         public string ClanIsNotInWar(string clanTag, string clanName)
             => $"{clanTag} {clanName} is not in war.";
-
-        public string AnErrorOccuredLocatingYourClan
-            => "An error occured locating your clan.";
 
         public string ThisCommandMustBeRanInAServer
             => "This command must be ran in a server.";
@@ -253,7 +256,7 @@ namespace MinionBot.Language
             => $"Your language has been changed to {language}.";
 
         public string IDontKnowThatLanguage
-            => "I don't know that language.";
+            => "I don't know that language. If you would like to add it, please visit https://github.com/devhl-labs/MinionBot5.Language.";
 
         public string PrefixRules
             => "A prefix is five or less characters and my not contain # @ or a space.";

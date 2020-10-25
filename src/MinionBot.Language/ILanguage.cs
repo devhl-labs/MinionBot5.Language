@@ -8,12 +8,13 @@ namespace MinionBot.Language
 
         string Aliases { get; }
 
+        string QuotedParametersAreTypedAsShown { get; }
+        string BracketedParametersAreOptional { get; }
         string AliasesMayNotContainSomeCharacters { get; }
         string AlreadySponsored { get; }
         string ThisCommandIsNotAvailableForCwlNorCompetetiveWars { get; }
         string NoStatsEnabled { get; }
         string NoStatsDisabled { get; }
-        string AnErrorOccuredLocatingYourClan { get; }
         string BecomeAPatronToDownloadThis { get; }
         string CallStackingIsDisabled { get; }
         string CallTimerMustBeBetween { get; }
