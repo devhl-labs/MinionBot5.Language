@@ -15,19 +15,19 @@ namespace MinionBot.Language
             => "Quoted parameters are typed as shown.";
 
         public string BracketedParametersAreOptional
-            => "Bracketed paramters are optional.";
+            => "Bracketed parameters are optional.";
 
         public string MustBeRanInGuild
             => "This command must be ran in a server";
 
-        public string ThisCommandIsNotAvailableForCwlNorCompetetiveWars
-            => "This command is not available for CWL nor competetive league wars.";
+        public string ThisCommandIsNotAvailableForCwlNorCompetitiveWars
+            => "This command is not available for CWL nor competitive league wars.";
 
         public string MustClaimClan
             => "You must claim a clan first. Try using the `claimclan` command.";
 
         public string NoStatsEnabled
-            => "Stats will no longer count. Attacks in this war will not be eligible for leader boards.";
+            => "Stats will no longer count. Attacks in this war will not be eligible for commands like botleader, villageleader, etc.";
 
         public string NoStatsDisabled
             => "Stats will now count. Attacks in this war will be eligible for leader boards.";
@@ -306,15 +306,16 @@ namespace MinionBot.Language
         public string ServerWillNowUseEmojiForDefenses(string emoji, string clanTag, string clanName)
             => $"Fresh 3 star defenses will now display {emoji} for {clanTag} {clanName}";
 
-        public string CommandMustBeRanInACategory { get; } = "This command must be ran in a category.";
+        public string CommandMustBeRanInACategory 
+            => "This command must be ran in a category.";
 
         public string ThisCommandWillRenameAllChannels(string clanTag, string clanName)
             => $"This command will begin renaming all text channels in this category for {clanTag} {clanName}.  Continue?";
 
-        public string ChannelsWillBeRenamed { get; }
-            = "Text channels in this category will be renamed on new wars or new attacks. Ensure I have manage channel permission in each channel.";
+        public string ChannelsWillBeRenamed
+            => "Text channels in this category will be renamed on new wars or new attacks. Ensure I have manage channel permission in each channel.";
 
-        public string CommandCanceled { get; } = "Command canceled";
+        public string CommandCanceled => "Command canceled";
 
         public string NowRenamingChannel(string clanTag, string clanName, int position)
             => $"Now renaming this channel for {clanTag} {clanName}, enemy position {position}.";

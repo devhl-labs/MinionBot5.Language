@@ -12,7 +12,7 @@ namespace MinionBot.Language
         string BracketedParametersAreOptional { get; }
         string AliasesMayNotContainSomeCharacters { get; }
         string AlreadySponsored { get; }
-        string ThisCommandIsNotAvailableForCwlNorCompetetiveWars { get; }
+        string ThisCommandIsNotAvailableForCwlNorCompetitiveWars { get; }
         string NoStatsEnabled { get; }
         string NoStatsDisabled { get; }
         string BecomeAPatronToDownloadThis { get; }
