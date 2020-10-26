@@ -259,7 +259,7 @@ namespace MinionBot.Language
             => "I don't know that language. If you would like to add it, please visit https://github.com/devhl-labs/MinionBot5.Language.";
 
         public string PrefixRules
-            => "A prefix is five or less characters and my not contain # @ or a space.";
+            => "A prefix is five or less characters and may not contain # @ or a space.";
 
         public string PrefixDefinition
             => "A prefix is a character that goes in front of commands like !, $, *, etc. It lets me know that you're talking to me. To set a prefix, use `setprefix !`. The ! can be other characters, too.";
@@ -298,7 +298,7 @@ namespace MinionBot.Language
             => "This server must be sponsored to do this. If you are a patron, use the command `sponsorserver`.";
 
         public string ServerWillNowUseEmojis(string attack, string defend, string clanTag, string clanName)
-            => $"Fresh 3 stars will now display {attack} for attacks and {defend} for defense for {clanTag} {clanName}";
+            => $"Fresh 3 stars will now display {attack} for attacks and {defend} for defenses for {clanTag} {clanName}";
 
         public string ServerWillNowUseEmojiForAttacks(string emoji, string clanTag, string clanName)
             => $"Fresh 3 star attacks will now display {emoji} for {clanTag} {clanName}";
@@ -366,6 +366,9 @@ namespace MinionBot.Language
             => "Command name is a place holder. Replace it with the name of a command.";
         public string YouHaveHiddenXAttacks(int count)
             => $"You have hidden {count} attacks.";
+
+        public string CommandNotFound
+            => "Command not found.";
 
         public List<CommandInfo> Commands { get; } = new List<CommandInfo>
         {
@@ -727,7 +730,8 @@ You can rename or delete the roles created by this command.",
             new CommandInfo(10, "removeclan", "Remove a clan from a league.", "#clanTag"),
             new CommandInfo(10, "shell", "Add a registrant clan under a participant.", "#shellTag #parentTag"),
             new CommandInfo(10, "unshell", "Move a registrant to their own participant.", "#shellTag"),
-            new CommandInfo(10, "autoupdate", "Import clan tags and season number from war match.", "warmatch url"),
+            new CommandInfo(10, "autoupdate", "This command was retired. Use `change league state` or `import` instead."),
+            new CommandInfo(10, "import", "Import clan tags from a war match url.", "warMatchUrl", "warMatchId"),
             new CommandInfo(10, "addwar", "Add a war to the league. If specifying clan tags you may want to update stars and percent next.", 
                 "warId",
                 "#losingClan #winningClan [prepStartDate]"),
@@ -737,6 +741,9 @@ You can rename or delete the roles created by this command.",
                 "(list of #villageTags)", 
                 "numOfDays (list of #villageTags)", 
                 "mayJoinClans mayBeInRandomWars [numOfDays] (list of #villageTags)"),
+            new CommandInfo(10, "orgunban",
+"Delete bans on villages from your organization.",
+                "(list of #villageTags)"),
             new CommandInfo(10, "changewinner", 
 "Change the winner of a league war. This will only be seen in the scoreboard, not the league stats.", 
                 "warId win/lose/tie #clanTag"),

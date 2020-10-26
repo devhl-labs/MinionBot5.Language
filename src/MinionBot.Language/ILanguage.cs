@@ -138,6 +138,7 @@ namespace MinionBot.Language
 
         string CommandNameIsAPlaceHolder { get; }
         string YouHaveHiddenXAttacks(int count);
+        string CommandNotFound { get; }
 
         List<CommandInfo> Commands { get; }
     }
