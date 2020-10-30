@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Net.Http.Headers;
+using MinionBot.Language.Properties;
 
 namespace MinionBot.Language
 {
@@ -372,8 +373,6 @@ namespace MinionBot.Language
 
         public List<CommandInfo> Commands { get; } = new List<CommandInfo>
         {
-
-
             //management
             new CommandInfo(1, "claimclan",
 @"Run this command for each clan you want to claim in a different channel.
