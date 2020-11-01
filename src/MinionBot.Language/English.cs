@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Net.Http.Headers;
-using MinionBot.Language.Properties;
+﻿using System.Collections.Generic;
 
 namespace MinionBot.Language
 {
     public class English : ILanguage
     {
-        public string Name => "English";
+        public string Name => "en-US";
 
-        public string Aliases { get; } = "english,en,🇺🇸,🇬🇧";
+        public string Aliases { get; } = "en-US,en,us,english,🇺🇸,🇬🇧";
 
         public string QuotedParametersAreTypedAsShown
             => "Quoted parameters are typed as shown.";
