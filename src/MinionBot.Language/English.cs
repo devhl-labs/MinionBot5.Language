@@ -8,6 +8,9 @@ namespace MinionBot.Language
 
         public string Aliases { get; } = "en-US,en,us,english,🇺🇸,🇬🇧";
 
+        public string ThisCommandIsNotForBots
+            => "This command does not support bots.";
+
         public string QuotedParametersAreTypedAsShown
             => "Quoted parameters are typed as shown.";
 
@@ -231,8 +234,8 @@ namespace MinionBot.Language
 
         public string ThisVillageHasNoBans(string villageTag, string villageName)
             => $"{villageTag} {villageName} is not banned from any clan.";
-        public string ThisVillageHasNoBans(string villageTag, string villageName, string clanTag, string clanName)
-            => $"Any ban on {villageTag} {villageName} for clan {clanTag} {clanName} has been removed.";
+        public string VillageIsNoLongerBannedIn(string villageTag, string villageName, string clanTag, string clanName)
+            => $"{villageTag} {villageName} is no longer banned in {clanTag} {clanName}.";
 
         public string ThisClanHasNoBans(string clanTag, string clanName)
             => $"{clanTag} {clanName} has no bans.";

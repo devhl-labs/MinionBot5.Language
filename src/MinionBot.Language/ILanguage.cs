@@ -8,6 +8,7 @@ namespace MinionBot.Language
 
         string Aliases { get; }
 
+        string ThisCommandIsNotForBots { get; }
         string QuotedParametersAreTypedAsShown { get; }
         string BracketedParametersAreOptional { get; }
         string AliasesMayNotContainSomeCharacters { get; }
@@ -107,7 +108,7 @@ namespace MinionBot.Language
 
         string ThisClanHasNoBans(string clanTag, string clanName);
 
-        string ThisVillageHasNoBans(string villageTag, string villageName, string clanTag, string clanName);
+        string VillageIsNoLongerBannedIn(string villageTag, string villageName, string clanTag, string clanName);
         string ThisVillageHasNoOrgBans(string villageTag, string villageName);
         string UpdatedVillages(string clanTag, string clanName, int villageCount);
         string UseDeletePrefixToUndoThis(string userMention, string prefix);
