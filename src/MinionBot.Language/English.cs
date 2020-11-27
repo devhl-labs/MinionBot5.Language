@@ -452,7 +452,7 @@ If you're having trouble using the name of the village, try using the village ta
             new CommandInfo(2, "deletealias",
 @"Use this to delete an old alias.
 Especially useful after you change a village name in game.
-Aliases should be unique, so you should only have to provide this comand the alias name.",
+Aliases should be unique, so you should only have to provide this command the alias name.",
                 "aliasToDelete",
                 "#villageTag aliasToDelete",
                 "#villageTag \"all\""),
