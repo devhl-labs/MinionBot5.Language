@@ -13,7 +13,7 @@ namespace MinionBot.Language
 		public string Aliases { get; } = "fr-FR,fr,french,:flag_fr:";
 
 		public string CommandNotFound
-			=> "Command not found.";
+			=> "Commande pas trouvée.";
 
 		public string VillageIsNoLongerBannedIn(string villageTag, string villageName, string clanTag, string clanName)
 			=> $"{villageTag} {villageName} is no longer banned in {clanTag} {clanName}.";
