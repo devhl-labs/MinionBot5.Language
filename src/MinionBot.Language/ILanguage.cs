@@ -8,6 +8,7 @@ namespace MinionBot.Language
 
         string Aliases { get; }
 
+        public string ATimeoutOccured { get; }
         string ThisCommandIsNotForBots { get; }
         string QuotedParametersAreTypedAsShown { get; }
         string BracketedParametersAreOptional { get; }

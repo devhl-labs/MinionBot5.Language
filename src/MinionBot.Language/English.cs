@@ -8,6 +8,9 @@ namespace MinionBot.Language
 
         public string Aliases { get; } = "en-US,en,us,english,🇺🇸,🇬🇧";
 
+        public string ATimeoutOccured
+            => "A timeout occurred. Please try again.";
+
         public string ThisCommandIsNotForBots
             => "This command does not support bots.";
 
@@ -110,7 +113,7 @@ namespace MinionBot.Language
             => "Call timer must be between 0 and 24 hours.";
 
         public string WarSizeMustBeDivisibleBy5AndLessThan50
-            => "War size must be divisible by 5 and less than 50.";
+            => "War size must be divisible by 5 and less than or equal to 50.";
 
         public string DefenderPositionMustBeBetween1And50
             => "Defender position must be between 1 and 50";
@@ -345,7 +348,7 @@ namespace MinionBot.Language
             => "Consider becoming a patron to use this command!";
 
         public string IncludeTheLeagueYouWouldLikeToSee
-            => "Please include the league would you like to see. Use the scoreboard command to see the list of leagues.";
+            => "Please include the league you would like to see. Use the scoreboard command to see the list of leagues.";
 
         public string WarEndWarningsDisabled
             => "The hashits role will no longer receive a mention when war ending soon is announced.";
@@ -354,10 +357,10 @@ namespace MinionBot.Language
             => "The hashits role will now be mentioned when the war ending soon is announced.";
 
         public string WarStartWarningsDisabled
-            => "The hashits role will no longer receive a mention when war ending soon is announced.";
+            => "The hashits role will no longer receive a mention when war starting soon is announced.";
 
         public string WarStartWarningsEnabled
-            => "The hashits role will now be mentioned when the war ending soon is announced.";
+            => "The hashits role will now be mentioned when the war starting soon is announced.";
 
         public string IncorrectParametersOrMissingPermission
             => "You provided bad parameters or there is a missing permission.";
@@ -431,7 +434,7 @@ You can rename or delete the roles created by this command.",
 @"By default Minion Bot has no prefix. 
 Assign one of your choice with this command.
 Once assigned, commands will require the prefix to run.
-If your prefix is !, the help command will look like!help.
+If your prefix is !, the help command will look like !help.
 Use deleteprefix to undo this.", "yourPrefix"),
             new CommandInfo(1, "deleteprefix", "This command will delete your prefix."),
 
@@ -657,9 +660,9 @@ Fresh type can be fresh or cleanup.",
                 "defenseEmoji"),
             new CommandInfo(5, "hideattacks",
 @"This will hide any attack that you have claimed. You must be a master patron to use this command. Your attacks are claimed by having the village claimed while the attack occurs or throught the claimattacks command.",
-                "none",
-                "#villageTag",
-                "olderThanXMonthsAgo"),
+                "[true/false]",
+                "#villageTag [true/false]",
+                "olderThanXMonthsAgo [true/false]"),
             new CommandInfo(5, "patreon", "Show your love for Minion Bot! Get a role in the support server and a few added perks."),
 
 
@@ -714,7 +717,7 @@ A league rep will need to approve it.",
             new CommandInfo(6, "removeclan", "Remove a clan from a league.", "#clanTag"),
             new CommandInfo(6, "shell", "Add a registrant clan under a participant.", "#shellTag #parentTag"),
             new CommandInfo(6, "unshell", "Move a registrant to their own participant.", "#shellTag"),
-            new CommandInfo(0, "autoupdate", "This command was retired. Use `change league state` or `import` instead."),
+            //new CommandInfo(0, "autoupdate", "This command was retired. Use `change league state` or `import` instead."),
             new CommandInfo(6, "import", "Import clan tags from a war match url.", "warMatchUrl", "warMatchId"),
             new CommandInfo(6, "addwar", "Add a war to the league. If specifying clan tags you may want to update stars and percent next.", 
                 "warId",

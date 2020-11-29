@@ -12,6 +12,8 @@ namespace MinionBot.Language
 
 		public string Aliases { get; } = "fr-FR,fr,french,:flag_fr:";
 
+		public string ATimeoutOccured
+			=> "A timeout occurred. Please try again.";
 		public string CommandNotFound
 			=> "Commande pas trouvée.";
 
@@ -621,9 +623,9 @@ Le type one shot peut être one shot ou repassé.",
 				"defenseEmoji"),
 			new CommandInfo(5, "hideattacks",
 @"Cela permettra de dissimuler toute attaque que vous avez réservée. Vous devez être un master patron pour utiliser cettecommande. Vos attaques sont réservées en ayant réclamé le village au moment de l'attaque ou par le biais de la commande claimattacks.",
-				"none",
-				"#villageTag",
-				"olderThanXMonthsAgo"),
+				"[true/false]",
+				"#villageTag [true/false]",
+				"olderThanXMonthsAgo [true/false]"),
 			new CommandInfo(5, "patreon", "Montrez votre amour pour Minion Bot! Obtenez un rôle sur le serveur support avec quelques avantages."),
 
 
@@ -681,7 +683,7 @@ A league rep will need to approve it.",
 			new CommandInfo(6, "removeclan", "Remove a clan from a league.", "#clanTag"),
 			new CommandInfo(6, "shell", "Add a registrant clan under a participant.", "#shellTag #parentTag"),
 			new CommandInfo(6, "unshell", "Move a registrant to their own participant.", "#shellTag"),
-			new CommandInfo(0, "autoupdate", "This command was retired. Use `change league state` or `import` instead."),
+			//new CommandInfo(0, "autoupdate", "This command was retired. Use `change league state` or `import` instead."),
 			new CommandInfo(6, "import", "Import clan tags from a war match url.", "warMatchUrl", "warMatchId"),
 			new CommandInfo(6, "addwar", "Add a war to the league. If specifying clan tags you may want to update stars and percent next.",
 				"warId",
