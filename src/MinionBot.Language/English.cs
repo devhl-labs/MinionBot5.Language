@@ -370,6 +370,9 @@ namespace MinionBot.Language
         public string YouHaveHiddenXAttacks(int count)
             => $"You have hidden {count} attacks.";
 
+        public string YouHaveUnhiddenXAttacks(int count)
+            => $"You have unhidden {count} attacks.";
+
         public string CommandNotFound
             => "Command not found.";
 

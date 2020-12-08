@@ -384,6 +384,9 @@ namespace MinionBot.Language
 		public string YouHaveHiddenXAttacks(int count)
 			=> $"Vous avez caché {count} attaques.";
 
+		public string YouHaveUnhiddenXAttacks(int count)
+			=> $"You have unhidden {count} attacks.";
+
 		public List<CommandInfo> Commands { get; } = new List<CommandInfo>
 		{
 			new CommandInfo(3, "setlanguage", "Change the language. Visit [github.com](https://github.com/devhl-labs/MinionBot5.Language) to view the supported languages.", "languageName"),
