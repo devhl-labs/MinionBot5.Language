@@ -12,6 +12,12 @@ namespace MinionBot.Language
 
 		public string Aliases { get; } = "fr-FR,fr,french,:flag_fr:";
 
+		public string AllRolesCanBeManaged
+			=> "All roles can be managed.";
+
+		public string SomeRolesCantBeManaged
+			=> "Some roles can't be managed.";
+
 		public string ATimeoutOccured
 			=> "A timeout occurred. Please try again.";
 		public string CommandNotFound

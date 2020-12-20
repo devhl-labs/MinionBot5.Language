@@ -8,6 +8,9 @@ namespace MinionBot.Language
 
         string Aliases { get; }
 
+        public string AllRolesCanBeManaged { get; }
+
+        public string SomeRolesCantBeManaged { get; }
         public string ATimeoutOccured { get; }
         string ThisCommandIsNotForBots { get; }
         string QuotedParametersAreTypedAsShown { get; }

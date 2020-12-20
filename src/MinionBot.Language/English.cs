@@ -8,6 +8,12 @@ namespace MinionBot.Language
 
         public string Aliases { get; } = "en-US,en,us,english,🇺🇸,🇬🇧";
 
+        public string AllRolesCanBeManaged
+            => "All roles can be managed.";
+
+        public string SomeRolesCantBeManaged
+            => "Some roles can't be managed.";
+
         public string ATimeoutOccured
             => "A timeout occurred. Please try again.";
 
@@ -398,6 +404,8 @@ The first clan you claim in a server is automatcally the default clan.",
             new CommandInfo(1, "myclan", "Use this command to see what clan tag Minion Bot is using in a given channel."),
             new CommandInfo(1, "myclans", "View all the clans your server has claimed."),
             new CommandInfo(1, "myserver", "Get information about your server."),
+            new CommandInfo(1, "myroles", "Get the roles that are managed by this bot."),
+            new CommandInfo(1, "myroles", "Get the roles that are managed by this bot."),
             new CommandInfo(1, "mychannel", "Get information on your channel's settings."),
             new CommandInfo(1, "mychannels", "Get information on all of your channel settings.", ""),
             new CommandInfo(1, "deleteroles", "This will delete all of the roles that were created by this bot."),
