@@ -98,8 +98,11 @@ namespace MinionBot.Language
 		public string YouDontHaveAnyVillagesClaimed
 			=> "Vous n'avez aucun village d'enregistrés.";
 
-		public string VillageNotFound
+		public string VillageNotFound()
 			=> "Village non trouvé.";
+
+		public string VillageNotFound(string tag, string clanName, string input)
+			=> $"No village was found in {tag} {clanName} with a tag or name of {input}.";
 
 		public string YourClanCouldNotBeDetermined
 			=> "Votre clan n'a pas pu être déterminé.";

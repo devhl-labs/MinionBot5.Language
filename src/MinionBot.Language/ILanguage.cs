@@ -67,7 +67,8 @@ namespace MinionBot.Language
         string ThisVillageIsNotClaimedYet { get; }
         string NoVillagesClaimed { get; }
         string ThisWarIsAlreadyInALeague { get; }
-        string VillageNotFound { get; }
+        string VillageNotFound();
+        public string VillageNotFound(string tag, string clanName, string input);
         string WarChannelFailed { get; }
         string WarSizeMustBeDivisibleBy5AndLessThan50 { get; }
         string YouAlreadyHaveThisVillageClaimed { get; }
