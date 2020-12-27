@@ -10,6 +10,7 @@ namespace MinionBot.Language
 
         public string AllRolesCanBeManaged { get; }
 
+        public string ThisLeagueIsInactive { get; }
         public string SomeRolesCantBeManaged { get; }
         public string ATimeoutOccured { get; }
         string ThisCommandIsNotForBots { get; }

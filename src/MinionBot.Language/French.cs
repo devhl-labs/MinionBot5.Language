@@ -12,6 +12,9 @@ namespace MinionBot.Language
 
 		public string Aliases { get; } = "fr-FR,fr,french,:flag_fr:";
 
+		public string ThisLeagueIsInactive
+			=> "This league is inactive or in offseason. If that is not correct, please join the support server and ping your league representatives.";
+
 		public string AllRolesCanBeManaged
 			=> "All roles can be managed.";
 
@@ -720,7 +723,9 @@ A league rep will need to approve it.",
 				"warId percent #clanTag"),
 			new CommandInfo(6, "leaguewinner", "Declare the league winner.", "#clanTag"),
 			new CommandInfo(6, "showprivatewars", "View all clans in this league which war log is private."),
-
+			new CommandInfo(6, "log", "Manually enter an attack. You can get map positions from the roster command.",
+				"warId #attackerClanTag attackerPosition defenderPosition stars percent"),
+			new CommandInfo(6, "undo", "Delete a manually entered attack.", "attackId"),
 
 
 

@@ -8,6 +8,8 @@ namespace MinionBot.Language
 
         public string Aliases { get; } = "en-US,en,us,english,🇺🇸,🇬🇧";
 
+        public string ThisLeagueIsInactive
+            => "This league is inactive or in offseason. If that is not correct, please join the support server and ping your league representatives.";
         public string AllRolesCanBeManaged
             => "All roles can be managed.";
 
@@ -661,7 +663,7 @@ Fresh type can be fresh or cleanup.",
                 "This command will rename a channel to reflect the number of stars on an enemy base. You must have permission to manage channel.",
                 "none",
                 "defenderPosition"),
-            new CommandInfo(5, "sponsorserver", "View the serverss that you are currently sponsoring."),
+            new CommandInfo(5, "sponsorserver", "Sponsor the current server."),
             new CommandInfo(5, "unsponsorserver", "Stop sponsoring a server. You can get the server ID from `mysponsorships`.", "[serverId]"),
             new CommandInfo(5, "mysponsorship", "View all of the servers you are sponsoring."),
             new CommandInfo(0, "freshemote",
@@ -756,8 +758,9 @@ A league rep will need to approve it.",
                 "warId percent #clanTag"),
             new CommandInfo(6, "leaguewinner", "Declare the league winner.", "#clanTag"),
             new CommandInfo(6, "showprivatewars", "View all clans in this league which war log is private."),
-
-
+            new CommandInfo(6, "log", "Manually enter an attack. You can get map positions from the roster command.", 
+                "warId #attackerClanTag attackerPosition defenderPosition stars percent"),
+            new CommandInfo(6, "undo", "Delete a manually entered attack.", "attackId"),
 
 
 
