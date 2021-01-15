@@ -238,7 +238,7 @@ namespace MinionBot.Language
             => $"Deleted {count} roles.";
 
         public string CreatedXRoles(int count)
-            => $"Created {count} roles. To create clan specific roles, run this command again with the clan tag.";
+            => $"Created {count} roles.";
 
         public string CreatedXRoles(string clanTag, string clanName, int count)
             => $"Created {count} roles for {clanTag} {clanName}.";

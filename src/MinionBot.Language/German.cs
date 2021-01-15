@@ -244,7 +244,7 @@ namespace MinionBot.Language
             => $"Es wurden {count} Rollen gelöscht.";
 
         public string CreatedXRoles(int count)
-            => $"Es wurden {count} Rollen erstellt. Um Clanspezifische Rollen zu erstellen, muss dieser Befehl mit dem Clantag erneut ausgeführt werden.";
+            => $"Es wurden {count} Rollen erstellt.";
 
         public string CreatedXRoles(string clanTag, string clanName, int count)
             => $"Es wurden {count} Rollen für {clanTag} {clanName} erstellt.";

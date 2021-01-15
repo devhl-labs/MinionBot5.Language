@@ -252,7 +252,7 @@ namespace MinionBot.Language
 			=> $" Ont été retirés {count} rôles.";
 
 		public string CreatedXRoles(int count)
-			=> $"Ont été créés  {count} rôles. Pour créer des rôles spécifiques au clan, utilisez la commande encore une fois avec le tag du clan.";
+			=> $"Ont été créés  {count} rôles.";
 
 		public string CreatedXRoles(string clanTag, string clanName, int count)
 			=> $"Ont été créés {count} rôles pour {clanTag} {clanName}.";
