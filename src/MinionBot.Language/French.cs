@@ -473,6 +473,7 @@ Utilisez ceci aussi pour avoir rapidement les tags des villages de vos coéquipi
 Ceci inclut les attaques et défenses faites avant que vous n'enregistriez le village.
 **?ette action est irréversible.**",
 				"#villageTag"),
+			new CommandInfo(2, "supertroops", "See what villages have super troops unlocked."),
 
 
 

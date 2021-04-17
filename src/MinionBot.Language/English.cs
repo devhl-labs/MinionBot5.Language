@@ -515,6 +515,7 @@ Provide a string to search to narrow the results.",
 This includes attacks and defenses done before you claimed the village.
 **This cannot be undone.**",
                 "#villageTag"),
+            new CommandInfo(2, "supertroops", "See what villages have super troops unlocked."),
 
 
 
