@@ -679,6 +679,7 @@ Fresh type can be fresh or cleanup.",
 @"This will hide any attack that you have claimed. You must be a master patron to use this command. Your attacks are claimed by having the village claimed while the attack occurs or throught the claimattacks command.",
                 "[true/false]",
                 "#villageTag [true/false]",
+                "#villageTag townhall [true/false]",
                 "olderThanXMonthsAgo [true/false]"),
             new CommandInfo(5, "patreon", "Show your love for Minion Bot! Get a role in the support server and a few added perks."),
 

@@ -641,6 +641,7 @@ Le type one shot peut être one shot ou repassé.",
 @"Cela permettra de dissimuler toute attaque que vous avez réservée. Vous devez être un master patron pour utiliser cettecommande. Vos attaques sont réservées en ayant réclamé le village au moment de l'attaque ou par le biais de la commande claimattacks.",
 				"[true/false]",
 				"#villageTag [true/false]",
+				"#villageTag townhall [true/false]",
 				"olderThanXMonthsAgo [true/false]"),
 			new CommandInfo(5, "patreon", "Montrez votre amour pour Minion Bot! Obtenez un rôle sur le serveur support avec quelques avantages."),
 
