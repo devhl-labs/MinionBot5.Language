@@ -763,7 +763,11 @@ A league rep will need to approve it.",
             new CommandInfo(6, "log", "Manually enter an attack. You can get map positions from the roster command.", 
                 "warId #attackerClanTag attackerPosition defenderPosition stars percent"),
             new CommandInfo(6, "undo", "Delete a manually entered attack.", "attackId"),
-
+            new CommandInfo(6, "setmatch",
+"Set a match date for two participating clans. The date is in UTC. When the two clans match on this day (plus or minus one day) it will be automatically approved.",
+                "date #clanTag1 #clanTag2 #clanTagX ..."),
+            new CommandInfo(6, "deletematch", "Removes one or more scheduled matches",
+                "none", "date", "#clanTag", "date #clanTag"),
 
 
 
