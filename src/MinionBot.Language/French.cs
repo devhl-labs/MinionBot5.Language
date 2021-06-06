@@ -734,7 +734,8 @@ A league rep will need to approve it.",
 				"date #clanTag1 #clanTag2 #clanTagX ..."),
 			new CommandInfo(6, "deletematch", "Removes one or more scheduled matches",
 				"none", "date", "#clanTag", "date #clanTag"),
-
+			new CommandInfo(6, "removeallclans", "Remove all clans from the league."),
+			new CommandInfo(6, "removeallwars", "Remove all wars from the league."),
 
 
 
