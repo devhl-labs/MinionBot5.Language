@@ -149,10 +149,8 @@ namespace MinionBot.Language
 
         string CommandNotFound { get; }
 
-        //List<CommandInfo> Commands { get; }
 
-
-
+        List<CommandInfo> Commands();
 
 
         // about
