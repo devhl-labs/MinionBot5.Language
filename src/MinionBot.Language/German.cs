@@ -2,11 +2,9 @@
 * Translation provided by Mundelino
 */
 
-using System.Collections.Generic;
-
 namespace MinionBot.Language
 {
-    public class German : ILanguage
+    public class German : AbstractLanguage, ILanguage
     {
         public string Name => "ge-GE";
 
@@ -40,7 +38,7 @@ namespace MinionBot.Language
             => "Dieser Befehl ist weder für CWL noch für Turnierkriege.";
 
         public string MustClaimClan
-            => "Du musst zuerst einen Clan festlegen. Benutze dafür den Befehl `claimclan`.";
+            => "Du musst zuerst einen Clan festlegen. Benutze dafür den Befehl `claimclan #clanTag`.";
 
         public string NoStatsEnabled
             => "Statistiken zählen nicht länger. Angriff in diesem Krieg sind nicht mehr für Befehle wie botleader, villageleader, etc. verfügbar.";
@@ -396,424 +394,130 @@ namespace MinionBot.Language
         public string CommandNotFound
             => "Der Befehl wurde nicht gefunden.";
 
-        public List<CommandInfo> Commands { get; } = new List<CommandInfo>
-    {
-        //management
-        new CommandInfo(1, "claimclan",
-@"Run this command for each clan you want to claim in a different channel.
-You must put the letters 'mb' after the clan description for this to work.",
-            "#clanTag"),
-        new CommandInfo(1, "unclaimclan",
-@"You may remove a clan from your server.
-To add it back, you will need to add 'mb' to the description again.",
-            "none",
-            "#clanTag",
-            "\"all\" #clanTag"),
-        new CommandInfo(1, "defaultclan",
-@"Allows you to tell Minion Bot which clan to use in channels where claimclan has never been ran.
-You may run this after running claimclan.
-The first clan you claim in a server is automatcally the default clan.",
-            "none",
-            "#clanTag"),
-        new CommandInfo(1, "myclan", "Use this command to see what clan tag Minion Bot is using in a given channel."),
-        new CommandInfo(1, "myclans", "View all the clans your server has claimed."),
-        new CommandInfo(1, "myserver", "Get information about your server."),           
-        new CommandInfo(1, "myroles", "Get the roles that are managed by this bot."),
-        new CommandInfo(1, "mychannel", "Get information on your channel's settings."),
-        new CommandInfo(1, "mychannels", "Get information on all of your channel settings.", ""),
-        new CommandInfo(1, "deleteroles", "This will delete all of the roles that were created by this bot."),
-        new CommandInfo(1, "addroles",
-@"This will create predefined roles in this server.
-These roles will be assigned automatically.
-You can rename or delete the roles created by this command.",
-            "none",
-            "true/false",
-            "\"guild\" [minTownHall] [maxTownHall]",
-            "minTownHall [maxTownHall]"),
-        new CommandInfo(1, "restrict",
-"This will make Minion Bot ignore commands in a channel. It is recommended that you use discord permissions instead of this command.",
-            "[true/false]"),
-        new CommandInfo(1, "posthits",
-            "Control what channels the attacks get posted to. You must have permission to manage channel to change the channel.",
-            "#channel",
-            "[true/false]",
-            "number"),
-        new CommandInfo(1, "postdonations",
-            "Control what channel donations are posted to. You must have permission to manage channel.",
-            "#channel",
-            "[true/false]"),
-        new CommandInfo(1, "postgreetings",
-            "Control what channel greetings are posted to. You must have permission to manage channel.",
-            "#channel",
-            "[true/false]"),
-        new CommandInfo(1, "endwarning",
-            "Toggle hasHits mentions for the war end warning. If you do not have the hasHits role this will not do anything.",
-            "[true/false]"),
-        new CommandInfo(1, "startwarning",
-            "Toggle hasHits mentions for the war start warning. If you do not have the hasHits role this will not do anything.",
-            "[true/false]"),
-        new CommandInfo(1, "setlanguage",
-"Change the language. Visit [github.com](https://github.com/devhl-labs/MinionBot5.Language) to view the supported languages.", "languageName"),
-        new CommandInfo(1, "setprefix",
-@"By default Minion Bot has no prefix. 
-Assign one of your choice with this command.
-Once assigned, commands will require the prefix to run.
-If your prefix is !, the help command will look like!help.
-Use deleteprefix to undo this.", "yourPrefix"),
-        new CommandInfo(1, "deleteprefix", "This command will delete your prefix."),
-
-
-
-
-
-
-        //villages
-        new CommandInfo(2, "alias", "Give a village a nickname. Keep it short and easy to type.", "#villageTag alias"),
-        new CommandInfo(2, "banvillage", "Ban a village from your clan.", "#villageTag reason"),
-        new CommandInfo(2, "unbanvillage", "Unban a village from your clan.", "#villageTag"),
-        new CommandInfo(2, "claim",
-@"Tell the bot who owns a village.
-Use a @discordMention to help your clanmates claim their village.
-If you're having trouble using the name of the village, try using the village tag.",
-            "villageTag [@discordMention]"),
-        new CommandInfo(2, "deletealias",
-@"Use this to delete an old alias.
-Especially useful after you change a village name in game.
-Aliases should be unique, so you should only have to provide this command the alias name.",
-            "aliasToDelete",
-            "#villageTag aliasToDelete",
-            "#villageTag \"all\""),
-        new CommandInfo(2, "getalias", "View all nicknames for a village.",
-            "#villageTag",
-            "@discordMention",
-            "none"),
-        new CommandInfo(2, "getbans", "View all bans for your clan or a given village.", "" +
-            "#villageTag",
-            "none",
-            "\"summary\""),
-        new CommandInfo(2, "getclaims", "Provides an overview of which villages are claimed.",
-            "#villageTag",
-            "none",
-            "@discordMention"),
-        new CommandInfo(2, "getunclaimed", "View all villages that are not claimed."),
-        new CommandInfo(2, "members", "View all the members who are currently in your clan.",
-            "none",
-            "#villageTag",
-            "@discordMention",
-            "townhallLevel"),
-        new CommandInfo(2, "lookup", "Lookup various information about a village.", "#villageTag"),
-        new CommandInfo(2, "mybase", "View information on a given base.",
-            "none",
-            "@discordMention",
-            "#villageTag"),
-        new CommandInfo(2, "prefer",
-@"Minion Bot will try to use the prefered alias over other aliases.
-You may only have one prefered alias at a time.
-Aliases should be unique, so you only need to provide the alias name.",
-            "aliasToPrefer"),
-        new CommandInfo(2, "search",
-@"Use this to see what villages are in your clan.
-Also use it to quickly get your clanmates village tag.
-Provide a string to search to narrow the results.",
-            "[text]"),
-        new CommandInfo(2, "unclaim", "Unassociate a village from a discord user.", "[#villageTag]"),
-        new CommandInfo(2, "updatemembers", "Update roles and hero levels for all villages in your clan."),
-        new CommandInfo(2, "claimattacks",
-@"This will claim all previously unclaimed attacks.
-This includes attacks and defenses done before you claimed the village.
-**This cannot be undone.**",
-            "#villageTag"),
-            new CommandInfo(2, "supertroops", "See what villages have super troops unlocked."),
-
-
-
-
-        //war
-        new CommandInfo(3, "calltimer", "Set the amount of time a call is good for.", "numOfHours"),
-        new CommandInfo(3, "stackcalls", "When enabled, multiple villages can call an enemy base at the same time.", "[true/false]"),
-        new CommandInfo(3, "privatewars",
-            "Tell Minion Bot that you will keep your war log closed. This will enable commands intended for private war logs such as start and report.",
-            "[true/false]"),
-        new CommandInfo(3, "publicwars",
-            "Tell Minion Bot that you will keep your war log open. Your war caller will be managed automatically.",
-            "[true/false]"),
-        new CommandInfo(3, "print", "View the villages that are called in this war."),
-        new CommandInfo(3, "start",
-            "This command is only for clans that keep their war log private. Use it to start a new war in Minion Bot.",
-            "size [enemyName]"),
-        new CommandInfo(3, "report",
-            "This command is only for clans that keep their war log private. Use it to report the outcome of an attack.",
-            "defenderPosition stars"),
-        new CommandInfo(3, "call",
-            "Call a given enemy base.",
-            "defenderPosition",
-            "defenderPosition #villageTag",
-            "defenderPosition @discordMention",
-            "defenderPosition text"),
-        new CommandInfo(3, "delete",
-            "Delete a call on an enemy base. Only providing the defender position will delete your own call on the base, or the first call on that base.",
-            "defenderPosition",
-            "defenderPosition callPosition",
-            "defenderPosition #attackerTag",
-            "defenderPosition @attackerMention"),
-        new CommandInfo(3, "nostats",
-            "Attacks will not count toward stats nor leaderboards if you run this. This enables you to have a fun war where the results don't matter. You must be a coleader to run this.",
-            "[true/false]"),
-        new CommandInfo(3, "getremainingattacks",
-            "This will show who has attacks left for your clan. If the village has a call, it will show that as well.",
-            "none",
-            "#villageTag",
-            "@discordMention"),
-        new CommandInfo(3, "getlastattacks", "View the last attacks.",
-            "none",
-            "#villageTag \"cwl\"",
-            "#villageTag [league] [season]",
-            "@discordMention \"cwl\"",
-            "#discordMention [league] [season]"),
-        new CommandInfo(3, "getlastdefenses", "View the last defenses.",
-            "none",
-            "#villageTag",
-            "#villageTag \"cwl\"",
-            "#villageTag league [season]",
-            "@discordMention",
-            "@discordMention \"cwl\"",
-            "#discordMention league [season]"),
-        new CommandInfo(3, "getwars", "Get a list of all known wars for a clan.", "none", "#clanTag", "league"),
-        new CommandInfo(3, "matchup", "View a side by side comparison of the current war."),
-        new CommandInfo(3, "defenses", "Get a summary of defenses remaining."),
-        new CommandInfo(3, "announcewar", "Print the war found announcement.",
-            "none",
-            "warId"),
-        new CommandInfo(3, "attacks", "Show the number of attacks left for each side of the war map."),
-        new CommandInfo(3, "roster", "View a summary of the villages in a given war.",
-            "none",
-            "warId"),
-        new CommandInfo(3, "lineup", "View detailed information on each village in the current war.",
-            "none",
-            "\"enemy\""),
-
-
-
-
-
-        //stats
-        new CommandInfo(4, "leaguestats", "Show the stats for this week's league wars.", "league"),
-        new CommandInfo(4, "botleader",
-@"Get the best attackers or defenders in the entire bot.
-This will get the best hit rates for all villages, regardless of clan.
-War Type can be farm, arranged, competetive, or SCCWL.
-Fresh type can be fresh or cleanup.",
-            "attackerTH defenderTH [numOfMonths] [warType] [\"defense\"] [freshType]"),
-        new CommandInfo(4, "clanleagueleader",
-@"This will show which clan has the best hit rate in a league.
-The season will default to the current season.
-For all seasons, enter 0.
-Fresh type can be fresh or cleanup.",
-            "attackerTH defenderTH league [season] [\"defense\"] [freshType]"),
-        new CommandInfo(4, "clanstats",
-@"Get stats from a clans entire attack history.
-This will look like the stats for a village, but it will show the entire clan.
-This allows you to enter other clan's tag to compare clans.
-The season will default to the current season.
-For all seasons, enter 0.
-War type can be farm, arranged, competetive, or SCCWL.",
-            "[clantag] [warType] [freshType]",
-            "[clantag] league [season] [freshType]",
-            "[clantag] numberOfMonths",
-            "none"
-            ),
-        new CommandInfo(4, "leagueleader",
-@"This will show the league with the best hit rate.
-Fresh type can be fresh or cleanup.",
-            "attackerTH defenderTH [\"defense\"] [freshType]"),
-        new CommandInfo(4, "stats",
-@"View the stats for the current war, a village, or a discord user.
-Number of months will limit the attacks to the last X months.
-The season will default to the current season.
-For all seasons, enter 0.
-War type can be farm, arranged, competetive, or SCCWL.
-Fresh type can be fresh or cleanup.
-The clan parameter will exclude attacks your clanmates have done while in other clans.
-War IDs can be found using the getwars command.",
-            "#villageTag [numberOfMonths] [warType] [freshType] [\"clan\"]",
-            "#villageTag [numberOfMonths] league [season] [freshType]",
-            "@discordMention [numberOfMonths] [warType] [freshType] [\"clan\"]",
-            "@discordMention [numberOfMonths] league [season] [freshType]",
-            "none",
-            "warId"),
-        new CommandInfo(4, "cwlstats", "This will show the current wars for all clans in your current SC CWL league.", "none", "#clanTag"),
-        new CommandInfo(4, "villageleader",
-@"This will show where you rank among your clan.
-Number of months will limit the attacks to the last X months.
-The season will default to the current season.
-For all seasons, enter 0.
-War type can be farm, arranged, competetive, or SCCWL.
-Fresh type can be fresh or cleanup.
-The clan parameter will exclude attacks your clanmates have done while in other clans.",
-            "attackerTH defenderTH [numberOfMonths] [league] [season] [\"defense\"] [freshType]",
-            "attackerTH defenderTH [numberOfMonths] [warType] [\"defense\"] [freshType] [\"clan\"]"),
-        new CommandInfo(4, "villageleagueleader",
-@"This will show the best attackers and defenders in a league.
-The season will default to the current season.
-For all seasons, enter 0.
-Fresh type can be fresh or cleanup.",
-            "attackerTH defenderTH league [season] [\"defense\"] [freshType]"),
-
-
-
-
-        //patreon
-        new CommandInfo(5, "downloadattacks", "Download a file containing your attacks.",
-            "none",
-            "warId",
-            "#villageTag",
-            "@discordMention"),
-        new CommandInfo(5, "warchannel",
-            "This command will rename a channel to reflect the number of stars on an enemy base. You must have permission to manage channel.",
-            "none",
-            "defenderPosition"),
-        new CommandInfo(5, "sponsorserver", "Sponsor the current server."),
-        new CommandInfo(5, "unsponsorserver", "Stop sponsoring a server. You can get the server ID from `mysponsorships`.", "[serverId]"),
-        new CommandInfo(5, "mysponsorship", "View all of the servers you are sponsoring."),
-        new CommandInfo(0, "freshemote",
-            "Sponsored servers can use this to control what emoji is displayed for a fresh three star attack or defense.",
-            "attackEmoji defennseEmoji"),
-        new CommandInfo(5, "freshattack",
-            "Sponsored servers can use this to control what emoji is displayed for a fresh three star attack.",
-            "attackEmoji"),
-        new CommandInfo(5, "freshdefense", "Sponsored servers can use this to control what emoji is displayed for a fresh three star defense.",
-            "defenseEmoji"),
-        new CommandInfo(5, "hideattacks",
-@"This will hide any attack that you have claimed. You must be a master patron to use this command. Your attacks are claimed by having the village claimed while the attack occurs or throught the claimattacks command.",
-            "none",
-            "#villageTag",
-            "#villageTag townhall [true/false]",
-            "olderThanXMonthsAgo"),
-        new CommandInfo(5, "patreon", "Show your love for Minion Bot! Get a role in the support server and a few added perks."),
-
-
-
-
-        //league
-        new CommandInfo(6, "divisions", "View the divisions in a given league.", "league"),
-        new CommandInfo(6, "scoreboard", "View the scoreboard for a league.",
-            "none",
-            "org",
-            "league [season] [division] [#clanTag]"),
-        new CommandInfo(6, "validate", "Check a given clan to see if any members have any bans in competitive leagues.",
-            "none",
-            "#clanTag"),
-        new CommandInfo(6, "createorg", "Create an organization.", "orgName"),
-        new CommandInfo(6, "change", "Drill down to see more.", "\"org\"", "\"league\"", "\"clan\""),
-        new CommandInfo(6, "change org", "Change an organization.",
-            "\"name\" value",
-            "\"initials\" value",
-            "\"image\" value",
-            "\"state\" OffSeason/RegularSeason/Playoffs/Inactive",
-            "\"server\" url",
-            "\"category\" ulong",
-            "\"role\" ulong",
-            "\"guild\" ulong"),
-        new CommandInfo(6, "change league", "Change a league",
-            "\"state\" OffSeason/RegularSeason/Playoffs/Inactive",
-            "\"initials\" value",
-            "\"image\" url",
-            "\"season\" value",
-            "\"warmatch\" url",
-            "\"channel\" ulong",
-            "\"org\" ulong",
-            "\"autoupdate\" [true/false]"),
-        new CommandInfo(6, "change clan", "Change a registrant.",
-            "\"main\" #clanTag",
-            "\"active\" #clanTag",
-            "\"division\" division #clanTag"),
-        new CommandInfo(6, "createleague", "Create a league.", "none"),
-        new CommandInfo(6, "inspect", "View information about an object.",
-            "\"org\" [org]",
-            "\"league\" [league]",
-            "#clanTag",
-            "match [date] [#clanTag]"),
-        new CommandInfo(6, "requestleague",
-@"If the current war is a league war, run this command to request to mark it as a league war.
-Your request will be sent to the support server.
-A league rep will need to approve it.",
-            "leagueInitials"),
-        new CommandInfo(6, "getorgbans", "View all bans for an organization.", "leagueInitials", "orgInitials", "none"),
-        new CommandInfo(6, "leaguerep", "View all league reps or assign league rep to a member.", "none", "@discordMention", "orgInitials"),
-        new CommandInfo(6, "addclan", "Add clans to a league.", "list of #clanTags"),
-        new CommandInfo(6, "removeclan", "Remove a clan from a league.", "#clanTag"),
-        new CommandInfo(6, "shell", "Add a registrant clan under a participant.", "#shellTag #parentTag"),
-        new CommandInfo(6, "unshell", "Move a registrant to their own participant.", "#shellTag"),
-        new CommandInfo(0, "autoupdate", "This command was retired. Use `change league state` or `import` instead."),
-        new CommandInfo(6, "import", "Import clan tags from a war match url.", "warMatchUrl", "warMatchId"),
-        new CommandInfo(6, "addwar", "Add a war to the league. If specifying clan tags you may want to update stars and percent next.",
-            "warId",
-            "#losingClan #winningClan [prepStartDate]"),
-        new CommandInfo(6, "removewar", "Remove a war from a league.", "warId"),
-        new CommandInfo(6, "orgban",
-"Ban villages from an organization. You will be notified if the village joins a registered clan or a war with a registered clan.",
-            "(list of #villageTags)",
-            "numOfDays (list of #villageTags)",
-            "mayJoinClans mayBeInRandomWars [numOfDays] (list of #villageTags)"),
-        new CommandInfo(6, "orgunban",
-"Delete bans on villages from your organization.",
-            "(list of #villageTags)"),
-        new CommandInfo(6, "changewinner",
-"Change the winner of a league war. This will only be seen in the scoreboard, not the league stats.",
-            "warId win/lose/tie #clanTag"),
-        new CommandInfo(6, "changestars",
-"Change the stars of a league war. This will only be seen in the scoreboard, not the league stats.",
-            "warId stars #clanTag"),
-        new CommandInfo(6, "changepercent",
-"Change the percent for a league war. This will only be seen in the scoreboard, not the league stats.",
-            "warId percent #clanTag"),
-        new CommandInfo(6, "leaguewinner", "Declare the league winner.", "#clanTag"),
-        new CommandInfo(6, "showprivatewars", "View all clans in this league which war log is private."),
-        new CommandInfo(6, "log", "Manually enter an attack. You can get map positions from the roster command.",
-            "warId #attackerClanTag attackerPosition defenderPosition stars percent"),
-        new CommandInfo(6, "undo", "Delete a manually entered attack.", "attackId"),
-        new CommandInfo(6, "setmatch",
-"Set a match date for two participating clans. The date is in UTC. When the two clans match on this day (or in the next seven days) it will be automatically approved. Use `deletematch` to undo this.",
-                "date #clanTag1 #clanTag2 #clanTagX ..."),
-        new CommandInfo(6, "deletematch", "Removes one or more scheduled matches",
-                "none", "date", "#clanTag", "date #clanTag"),
-        new CommandInfo(6, "removeallclans", "Remove all clans from the league."),
-        new CommandInfo(6, "removeallwars", "Remove all wars from the league."),
-
-
-
-
-
-
-
-
-
-
-
-        //debugging
-        new CommandInfo(7, "ping", "Inspect latency with Discord."),
-        new CommandInfo(7, "permissions", "Inspect the permissions for a given member.", "[@discordMention]"),
-        new CommandInfo(7, "fetchclan",
-            "Retrieve information on a clan directly from the api.",
-            "[#clanTag]"),
-        new CommandInfo(7, "fetchclans", "Search the api for a clan by name.", "text"),
-        new CommandInfo(7, "fetchcurrentwar", "Retrive the current war directly from the api.", "[#clanTag]"),
-        new CommandInfo(7, "fetchplayer", "Retrive information on a player directly from the api.", "#villageTag"),
-        new CommandInfo(7, "fetchleaguegroup", "Retrieve information on a league group directly from the api.", "[#clanTag]"),
-        new CommandInfo(7, "fetchleaguewar", "Retrieve information on a SC CWL war directly from the api.", "#warTag"),
-        new CommandInfo(7, "fetchclanwarlog", "Retrieve information on a war log directly from the api.", "[#clanTag]"),
-        new CommandInfo(7, "api", "View api response times.", "[numOfMinutes]"),
-
-
-        //about
-        new CommandInfo(8, "info", "Get basic information on Minion Bot."),
-        new CommandInfo(8, "commands", "Get a list of all commands."),
-        new CommandInfo(8, "setupvideo", "Provides a link to a setup tutorial."),
-        new CommandInfo(8, "fortwitch", "Provides a link to a version of Minion Bot for streamers. This is a program you run on your computer. It will update your overlay for you."),
-        new CommandInfo(8, "invite", "Provides a link to the support server and to invite Minion Bot."),
-
-
-    };
-    }
-    
+        public string HelpClaimClan => new English().HelpClaimClan;
+        public string HelpInvite => new English().HelpInvite;
+        public string HelpForTwitch => new English().HelpForTwitch;
+        public string HelpSetupVideo => new English().HelpSetupVideo;
+        public string HelpCommands => new English().HelpCommands;
+        public string HelpInfo => new English().HelpInfo;
+        public string HelpApi => new English().HelpApi;
+        public string HelpFetchClanWarLog => new English().HelpFetchClanWarLog;
+        public string HelpFetchLeagueWar => new English().HelpFetchLeagueWar;
+        public string HelpFetchLeagueGroup => new English().HelpFetchLeagueGroup;
+        public string HelpFetchPlayer => new English().HelpFetchPlayer;
+        public string HelpFetchCurrentWar => new English().HelpFetchCurrentWar;
+        public string HelpFetchClans => new English().HelpFetchClans;
+        public string HelpFetchClan => new English().HelpFetchClan;
+        public string HelpPermissions => new English().HelpPermissions;
+        public string HelpPing => new English().HelpPing;
+        public string HelpRemoveAllWars => new English().HelpRemoveAllWars;
+        public string HelpRemoveAllClans => new English().HelpRemoveAllClans;
+        public string HelpDeleteMatch => new English().HelpDeleteMatch;
+        public string HelpSetMatch => new English().HelpSetMatch;
+        public string HelpUndo => new English().HelpUndo;
+        public string HelpLog => new English().HelpLog;
+        public string HelpShowPrivateWars => new English().HelpShowPrivateWars;
+        public string HelpLeagueWinner => new English().HelpLeagueWinner;
+        public string HelpChangePercent => new English().HelpChangePercent;
+        public string HelpChangeStars => new English().HelpChangeStars;
+        public string HelpChangeWinner => new English().HelpChangeWinner;
+        public string HelpOrgUnban => new English().HelpOrgUnban;
+        public string HelpOrgBan => new English().HelpOrgBan;
+        public string HelpRemoveWar => new English().HelpRemoveWar;
+        public string HelpAddWar => new English().HelpAddWar;
+        public string HelpImport => new English().HelpImport;
+        public string HelpUnshell => new English().HelpUnshell;
+        public string HelpShell => new English().HelpShell;
+        public string HelpRemoveClan => new English().HelpRemoveClan;
+        public string HelpAddClan => new English().HelpAddClan;
+        public string HelpLeagueRep => new English().HelpLeagueRep;
+        public string HelpGetOrgBans => new English().HelpGetOrgBans;
+        public string HelpRequestLeague => new English().HelpRequestLeague;
+        public string HelpInspect => new English().HelpInspect;
+        public string HelpCreateLeague => new English().HelpCreateLeague;
+        public string HelpChangeLeague => new English().HelpChangeLeague;
+        public string HelpChangeClan => new English().HelpChangeClan;
+        public string HelpChangeOrg => new English().HelpChangeOrg;
+        public string HelpChange => new English().HelpChange;
+        public string HelpCreateOrg => new English().HelpCreateOrg;
+        public string HelpValidate => new English().HelpValidate;
+        public string HelpScoreboard => new English().HelpScoreboard;
+        public string HelpDivisions => new English().HelpDivisions;
+        public string HelpPatreon => new English().HelpPatreon;
+        public string HelpHideAttacks => new English().HelpHideAttacks;
+        public string HelpFreshDefense => new English().HelpFreshDefense;
+        public string HelpFreshAttack => new English().HelpFreshAttack;
+        public string HelpFreshEmote => new English().HelpFreshEmote;
+        public string HelpMySponsorShip => new English().HelpMySponsorShip;
+        public string HelpUnsponsorServer => new English().HelpUnsponsorServer;
+        public string HelpSponsorServer => new English().HelpSponsorServer;
+        public string HelpWarChannel => new English().HelpWarChannel;
+        public string HelpDownloadAttacks => new English().HelpDownloadAttacks;
+        public string HelpVillageLeagueLeader => new English().HelpVillageLeagueLeader;
+        public string HelpVillageLeader => new English().HelpVillageLeader;
+        public string HelpCwlStats => new English().HelpCwlStats;
+        public string HelpStats => new English().HelpStats;
+        public string HelpLeagueLeader => new English().HelpLeagueLeader;
+        public string HelpClanStats => new English().HelpClanStats;
+        public string HelpClanLeagueLeader => new English().HelpClanLeagueLeader;
+        public string HelpBotLeader => new English().HelpBotLeader;
+        public string HelpLeagueStats => new English().HelpLeagueStats;
+        public string HelpLineup => new English().HelpLineup;
+        public string HelpRoster => new English().HelpRoster;
+        public string HelpAttacks => new English().HelpAttacks;
+        public string HelpAnnounceWar => new English().HelpAnnounceWar;
+        public string HelpDefenses => new English().HelpDefenses;
+        public string HelpMatchup => new English().HelpMatchup;
+        public string HelpGetWars => new English().HelpGetWars;
+        public string HelpGetLastDefenses => new English().HelpGetLastDefenses;
+        public string HelpGetLastAttacks => new English().HelpGetLastAttacks;
+        public string HelpGetRemainingAttacks => new English().HelpGetRemainingAttacks;
+        public string HelpNoStats => new English().HelpNoStats;
+        public string HelpDelete => new English().HelpDelete;
+        public string HelpCall => new English().HelpCall;
+        public string HelpReport => new English().HelpReport;
+        public string HelpStart => new English().HelpStart;
+        public string HelpPrint => new English().HelpPrint;
+        public string HelpPublicWars => new English().HelpPublicWars;
+        public string HelpPrivateWars => new English().HelpPrivateWars;
+        public string HelpStackCalls => new English().HelpStackCalls;
+        public string HelpCallTimer => new English().HelpCallTimer;
+        public string HelpSuperTroops => new English().HelpSuperTroops;
+        public string HelpClaimAttacks => new English().HelpClaimAttacks;
+        public string HelpUnclaim => new English().HelpUnclaim;
+        public string HelpSearch => new English().HelpSearch;
+        public string HelpPrefer => new English().HelpPrefer;
+        public string HelpMyBase => new English().HelpMyBase;
+        public string HelpLookup => new English().HelpLookup;
+        public string HelpMembers => new English().HelpMembers;
+        public string HelpGetUnclaimed => new English().HelpGetUnclaimed;
+        public string HelpGetClaims => new English().HelpGetClaims;
+        public string HelpGetBans => new English().HelpGetBans;
+        public string HelpGetAlias => new English().HelpGetAlias;
+        public string HelpDeleteAlias => new English().HelpDeleteAlias;
+        public string HelpClaim => new English().HelpDeleteAlias;
+        public string HelpUnBanVillage => new English().HelpUnBanVillage;
+        public string HelpBanVillage => new English().HelpBanVillage;
+        public string HelpAlias => new English().HelpAlias;
+        public string HelpDeletePrefix => new English().HelpDeletePrefix;
+        public string HelpSetPrefix => new English().HelpSetPrefix;
+        public string HelpSetLanguage => new English().HelpSetLanguage;
+        public string HelpStartWarning => new English().HelpStartWarning;
+        public string HelpEndWarning => new English().HelpEndWarning;
+        public string HelpPostGreetings => new English().HelpPostGreetings;
+        public string HelpPostDonations => new English().HelpPostDonations;
+        public string HelpPostHits => new English().HelpPostHits;
+        public string HelpRestrict => new English().HelpRestrict;
+        public string HelpAddRoles => new English().HelpAddRoles;
+        public string HelpDeleteRoles => new English().HelpDeleteRoles;
+        public string HelpMyChannels => new English().HelpMyChannels;
+        public string HelpMyChannel => new English().HelpMyChannel;
+        public string HelpMyRoles => new English().HelpMyRoles;
+        public string HelpMyClan => new English().HelpMyClan;
+        public string HelpMyServer => new English().HelpMyServer;
+        public string HelpMyClans => new English().HelpMyClans;
+        public string HelpDefaultClan => new English().HelpDefaultClan;
+        public string HelpUnclaimClan => new English().HelpUnclaimClan;
+        public string HelpUpdateMembers => new English().HelpUpdateMembers;
+    }    
 }

@@ -149,6 +149,159 @@ namespace MinionBot.Language
 
         string CommandNotFound { get; }
 
-        List<CommandInfo> Commands { get; }
+        //List<CommandInfo> Commands { get; }
+
+
+
+
+
+        // about
+        string HelpClaimClan { get; }
+        string HelpInvite { get; }
+        string HelpForTwitch { get; }
+        string HelpSetupVideo { get; }
+        string HelpCommands { get; }
+        string HelpInfo { get; }
+
+
+        // debugging
+        string HelpApi { get; }
+        string HelpFetchClanWarLog { get; }
+        string HelpFetchLeagueWar { get; }
+        string HelpFetchLeagueGroup { get; }
+        string HelpFetchPlayer { get; }
+        string HelpFetchCurrentWar { get; }
+        string HelpFetchClans { get; }
+        string HelpFetchClan { get; }
+        string HelpPermissions { get; }
+        string HelpPing { get; }
+
+
+        // league
+        string HelpRemoveAllWars { get; }
+        string HelpRemoveAllClans { get; }
+        string HelpDeleteMatch { get; }
+        string HelpSetMatch { get; }
+        string HelpUndo { get; }
+        string HelpLog { get; }
+        string HelpShowPrivateWars { get; }
+        string HelpLeagueWinner { get; }
+        string HelpChangePercent { get; }
+        string HelpChangeStars { get; }
+        string HelpChangeWinner { get; }
+        string HelpOrgUnban { get; }
+        string HelpOrgBan { get; }
+        string HelpRemoveWar { get; }
+        string HelpAddWar { get; }
+        string HelpImport { get; }
+        string HelpUnshell { get; }
+        string HelpShell { get; }
+        string HelpRemoveClan { get; }
+        string HelpAddClan { get; }
+        string HelpLeagueRep { get; }
+        string HelpGetOrgBans { get; }
+        string HelpRequestLeague { get; }
+        string HelpInspect { get; }
+        string HelpCreateLeague { get; }
+        string HelpChangeLeague { get; }
+        string HelpChangeClan { get; }
+        string HelpChangeOrg { get; }
+        string HelpChange { get; }
+        string HelpCreateOrg { get; }
+        string HelpValidate { get; }
+        string HelpScoreboard { get; }
+        string HelpDivisions { get; }
+
+
+
+        // patreon
+        string HelpPatreon { get; }
+        string HelpHideAttacks { get; }
+        string HelpFreshDefense { get; }
+        string HelpFreshAttack { get; }
+        string HelpFreshEmote { get; }
+        string HelpMySponsorShip { get; }
+        string HelpUnsponsorServer { get; }
+        string HelpSponsorServer { get; }
+        string HelpWarChannel { get; }
+        string HelpDownloadAttacks { get; }
+
+        // stats
+        string HelpVillageLeagueLeader { get; }
+        string HelpVillageLeader { get; }
+        string HelpCwlStats { get; }
+        string HelpStats { get; }
+        string HelpLeagueLeader { get; }
+        string HelpClanStats { get; }
+        string HelpClanLeagueLeader { get; }
+        string HelpBotLeader { get; }
+        string HelpLeagueStats { get; }
+
+
+        // war
+        string HelpLineup { get; }
+        string HelpRoster { get; }
+        string HelpAttacks { get; }
+        string HelpAnnounceWar { get; }
+        string HelpDefenses { get; }
+        string HelpMatchup { get; }
+        string HelpGetWars { get; }
+        string HelpGetLastDefenses { get; }
+        string HelpGetLastAttacks { get; }
+        string HelpGetRemainingAttacks { get; }
+        string HelpNoStats { get; }
+        string HelpDelete { get; }
+        string HelpCall { get; }
+        string HelpReport { get; }
+        string HelpStart { get; }
+        string HelpPrint { get; }
+        string HelpPublicWars { get; }
+        string HelpPrivateWars { get; }
+        string HelpStackCalls { get; }
+        string HelpCallTimer { get; }
+
+
+        // village
+        string HelpSuperTroops { get; }
+        string HelpClaimAttacks { get; }
+        string HelpUpdateMembers { get; }
+        string HelpUnclaim { get; }
+        string HelpSearch { get; }
+        string HelpPrefer { get; }
+        string HelpMyBase { get; }
+        string HelpLookup { get; }
+        string HelpMembers { get; }
+        string HelpGetUnclaimed { get; }
+        string HelpGetClaims { get; }
+        string HelpGetBans { get; }
+        string HelpGetAlias { get; }
+        string HelpDeleteAlias { get; }
+        string HelpClaim { get; }
+        string HelpUnBanVillage { get; }
+        string HelpBanVillage { get; }
+        string HelpAlias { get; }
+
+
+
+        // management
+        string HelpDeletePrefix { get; }
+        string HelpSetPrefix { get; }
+        string HelpSetLanguage { get; }
+        string HelpStartWarning { get; }
+        string HelpEndWarning { get; }
+        string HelpPostGreetings { get; }
+        string HelpPostDonations { get; }
+        string HelpPostHits { get; }
+        string HelpRestrict { get; }
+        string HelpAddRoles { get; }
+        string HelpDeleteRoles { get; }
+        string HelpMyChannels { get; }
+        string HelpMyChannel { get; }
+        string HelpMyRoles { get; }
+        string HelpMyClan { get; }
+        string HelpMyServer { get; }
+        string HelpMyClans { get; }
+        string HelpDefaultClan { get; }
+        string HelpUnclaimClan { get; }
     }
 }

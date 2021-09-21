@@ -2,11 +2,9 @@
 * Translation provided by RouletabilleDC
 */
 
-using System.Collections.Generic;
-
 namespace MinionBot.Language
 {
-	public class French : ILanguage
+	public class French : AbstractLanguage, ILanguage
 	{
 		public string Name => "fr-FR";
 
@@ -48,7 +46,7 @@ namespace MinionBot.Language
 			=> "Cette commande n'est pas disponible ni pour les CWL ni pour les ligues compétitives.";
 
 		public string MustClaimClan
-			=> "Vous devez d'abord enregistrer votre clan en utilisant la commande `claimclan`.";
+			=> "Vous devez d'abord enregistrer votre clan en utilisant la commande `claimclan #clanTag`.";
 
 		public string NoStatsEnabled
 			=> "Les statistiques ne compteront plus et les attaques dans cette guerre ne seront plus éligibles pour les commandes comme villageleader.";
@@ -399,183 +397,84 @@ namespace MinionBot.Language
 		public string YouHaveUnhiddenXAttacks(int count)
 			=> $"You have unhidden {count} attacks.";
 
-		public List<CommandInfo> Commands { get; } = new List<CommandInfo>
-		{
-			new CommandInfo(3, "setlanguage", "Change the language. Visit [github.com](https://github.com/devhl-labs/MinionBot5.Language) to view the supported languages.", "languageName"),
-			new CommandInfo(3, "setprefix",
-@"Par défaut Minion Bot n'a pas de préfixe.
-Assignez en un de votre choix avec cette commande.
-Une fois assigné, les commandes requerrons le préfixe.
-Si votre préfixe est !, la commande d'aide sera !help.
-Utilisez deleteprefix pour annuler.", "yourPrefix"),
-			new CommandInfo(1, "deleteprefix", "Cette commande supprimera votre préfixe"),
 
 
-
-
-
-
-			//villages
-			new CommandInfo(2, "alias", "Donnez un pseudonyme au village. Gardez le court et facile à écrire.", "#villageTag alias"),
-			new CommandInfo(2, "banvillage", "Bannez un village de votre clan.", "#villageTag reason"),
-			new CommandInfo(2, "unbanvillage", "Débannez un village de votre clan.", "#villageTag"),
-			new CommandInfo(2, "claim",
-@"Dites au bot qui est le propriétaire du village.
-Utilisez une @MentionDiscord pour aider votre équipier de clan à enregistrer leur village.
-Si vous avez un problème à utiliser le nom du village, essayez d'utiliser le tag du village.",
-				"villageTag [@discordMention]"),
-			new CommandInfo(2, "deletealias",
-@"Utilisez ceci pour supprimer un ancien alias.
-Utile surtout après que vous changez le nom d'un village dans le jeu.
-Les alias doivent être uniques, vous devez fournir à cette commande le nom de l'alias.",
-				"aliasToDelete",
-				"#villageTag aliasToDelete",
-				"#villageTag \"all\""),
-			new CommandInfo(2, "getalias", "Voir tous les pseudonymes pour un village.",
-				"#villageTag",
-				"@discordMention",
-				"none"),
-			new CommandInfo(2, "getbans", "Voir tous les bans pour votre clan ou un village donné.", "" +
-				"#villageTag",
-				"none",
-				"\"summary\""),
-			new CommandInfo(2, "getclaims", "Fournit une vue d'ensemble de tous les villages non enregistrés.",
-				"#villageTag",
-				"none",
-				"@discordMention"),
-			new CommandInfo(2, "getunclaimed", "Voir tous les villages non enregistrés."),
-			new CommandInfo(2, "members", "Voir tous les membres qui sont actuellement dans votre clan.",
-				"none",
-				"#villageTag",
-				"@discordMention",
-				"townhallLevel"),
-			new CommandInfo(2, "lookup", "Rechercher des informations diverses à propos d'un village.", "#villageTag"),
-			new CommandInfo(2, "mybase", "Voir les informations d'une base donnée.",
-				"none",
-				"@discordMention",
-				"#villageTag"),
-			new CommandInfo(2, "prefer",
-@"Minion Bot essayera d'utiliser le préfixe préféré au-dessus des autres alias.
-Vous pouvez avoir uniquement un alias préféré à la fois.
-Les alias doivent être uniques, vous devez fournir à cette commande le nom de l'alias.",
-"Aliases should be unique, so you only need to provide the alias name.",
-				"aliasToPrefer"),
-			new CommandInfo(2, "search",
-
-@"Utilisez ceci pour voir quels villages sont dans votre clan.
-Utilisez ceci aussi pour avoir rapidement les tags des villages de vos coéquipiers de clan.",
-"Fournissez une chaîne de recherche pour limiter les résultats.",
-				"[text]"),
-			new CommandInfo(2, "unclaim", "Dissociez un village d'un utilisateur de Discord.",  "[#villageTag]"),
-			new CommandInfo(2, "updatemembers", "Mettre à hour les rôles et les niveaux d'héros pour tous les villages dans votre clan."),
-			new CommandInfo(2, "claimattacks",
-@"Ceci va enregistrer toutes les attaques pré?édemment non enregitrées.
-Ceci inclut les attaques et défenses faites avant que vous n'enregistriez le village.
-**?ette action est irréversible.**",
-				"#villageTag"),
-			new CommandInfo(2, "supertroops", "See what villages have super troops unlocked."),
-
-
-
-
-			//war
-			new CommandInfo(3, "calltimer", "Mettez en place la durée d'une réservation.", "numOfHours"),
-			new CommandInfo(3, "stackcalls", "Quand c'est activé, plusieurs villages peuvent réserver une base ennemie en même temps.", "[true/false]"),
-			new CommandInfo(3, "privatewars",
-				"Dites à Minion Bot que vous allez garder le journal de guerre fermé. Cela permettra des commandes destinées aux journaux de guerre privés telles que \"start\" et \"report\"",
-				"[true/false]"),
-			new CommandInfo(3, "publicwars",
-				"Dites à Minion Bot que vous allez garder le journal de guerre ouvert. Votre réservation de guerre sera directement pris en charge.",
-				"[true/false]"),
-			new CommandInfo(3, "print", "Voir les villages qui sont réservés dans cette guerre."),
-			new CommandInfo(3, "start",
-				"Cette commande est uniquement pour les clans qui gardent leur journal de guerre privé. Utilisez la commande pour commencer une nouvelle guerre dans Minion Bot.",
-				"size [enemyName]"),
-			new CommandInfo(3, "report",
-				"Cette commande est uniquement pour les clans qui gardent leur journal de guerre privé. Utilisez la commande pour signaler le résultat d'une attaque.",
-				"defenderPosition stars"),
-			new CommandInfo(3, "call",
-				"Réserver une base ennemie donnée.",
-				"defenderPosition",
-				"defenderPosition #villageTag",
-				"defenderPosition @discordMention",
-				"defenderPosition text"),
-			new CommandInfo(3, "delete",
-				"Supprimer une réservation sur une base ennemie. Fournir uniquement la position ennemie supprimera votre propre ou la première réservation sur la base.",
-				"defenderPosition",
-				"defenderPosition callPosition",
-				"defenderPosition #attackerTag",
-				"defenderPosition @attackerMention"),
-			new CommandInfo(3, "nostats",
-				"Les attaques ne seront pas prises en compte dans les statistiques ni dans les classements si vous faites cela. Cela vous permet de mener une guerre amusante où les résultats n'ont pas d'importance. Vous devez être chef-adjoint pour le faire.",
-				"[true/false]"),
-			new CommandInfo(3, "getremainingattacks",
-				"Cela montrera les attaques restantes pour votre clan. Cela montrera aussi si le village a une réservation.",
-				"none",
-				"#villageTag",
-				"@discordMention"),
-			new CommandInfo(3, "getlastattacks", "Voir les dernières attaques.",
-				"none",
-				"#villageTag \"cwl\"",
-				"#villageTag [league] [season]",
-				"@discordMention \"cwl\"",
-				"#discordMention [league] [season]"),
-			new CommandInfo(3, "getlastdefenses", "Voir les dernières défenses.",
-				"none",
-				"#villageTag",
-				"#villageTag \"cwl\"",
-				"#villageTag league [season]",
-				"@discordMention",
-				"@discordMention \"cwl\"",
-				"#discordMention league [season]"),
-			new CommandInfo(3, "getwars", "Obtenez une liste de toutes les guerres connues pour un clan.", "none", "#clanTag", "league"),
-			new CommandInfo(3, "matchup", "Voir une comparaison clan par clan de la guerre actuelle."),
-			new CommandInfo(3, "defenses", "Obtenez un résumé des défenses restantes."),
-			new CommandInfo(3, "announcewar", "Imprimer l'annonce lorsqu'une guerre est trouvée.",
-				"none",
-				"warId"),
-			new CommandInfo(3, "attacks", "Montrer le nombre d'attaques restantes pour chaque côté de la carte de guerre."),
-			new CommandInfo(3, "roster", "Voir un résumé des villages dans une guerre donnée.",
-				"none",
-				"warId"),
-			new CommandInfo(3, "lineup", "Voir les informations détaillées sur chaque village dans la guerre actuelle.",
-				"none",
-				"\"enemy\""),
-
-
-
-			//stats
-			new CommandInfo(4, "leaguestats", "Montrer les statistiques pour cette semaine de guerres de clans.", "league"),
-			new CommandInfo(4, "botleader",
-@"Obtenez les meilleurs attaquants ou défenseurs dans l'ensemble du bot.
-Cela permettra d'obtenir les meilleurs taux de réussite pour tous les villages, quel que soit le clan.
+		public string HelpClaimClan => new English().HelpClaimClan;
+		public string HelpInvite => "Fournit un lien du serveur support et le lien d'invitation de Minion Bot.";
+		public string HelpForTwitch => "Fournit un link pour une version pour les streamers de Minion Bot. C'est un programme que vous utilisez sur votre ordinateur. Cela mettra à jour votre overlay pour vous.";
+		public string HelpSetupVideo => "Fournit un lien pour le tutoriel pour l'installation du bot.";
+		public string HelpCommands => "Obtenez une liste de toutes les commandes.";
+		public string HelpInfo => "Obtenez les informations basiques à propos de Minion Bot.";
+		public string HelpApi => "Voir les temps de réponse de l'api.";
+		public string HelpFetchClanWarLog => "Récupérer les informations sur un journal de guerre directement à partir de l'api.";
+		public string HelpFetchLeagueWar => "Récupérer les informations sur une guerre de SCCWL directement à partir de l'api.";
+		public string HelpFetchLeagueGroup => "Récupérer les informations sur un groupe de ligue directement à partir de l'api.";
+		public string HelpFetchPlayer => "Retrouvez les informations sur un joueur directement à partir de l'api.";
+		public string HelpFetchCurrentWar => "Retrouvez la guerre actuelle directement à partir de l'api.";
+		public string HelpFetchClans => "Recherchez un clan par son nom dans l'api";
+		public string HelpFetchClan => "Récupérer des informations sur un clan directement à partir de l'api.";
+		public string HelpPermissions => "Inspecter les permissions données pour un membre.";
+		public string HelpPing => "Inspecter la latence avec Discord.";
+		public string HelpRemoveAllWars => new English().HelpRemoveAllWars;
+		public string HelpRemoveAllClans => new English().HelpRemoveAllClans;
+		public string HelpDeleteMatch => new English().HelpDeleteMatch;
+		public string HelpSetMatch => new English().HelpSetMatch;
+		public string HelpUndo => new English().HelpUndo;
+		public string HelpLog => new English().HelpLog;
+		public string HelpShowPrivateWars => new English().HelpShowPrivateWars;
+		public string HelpLeagueWinner => new English().HelpLeagueWinner;
+		public string HelpChangePercent => new English().HelpChangePercent;
+		public string HelpChangeStars => new English().HelpChangeStars;
+		public string HelpChangeWinner => new English().HelpChangeWinner;
+		public string HelpOrgUnban => new English().HelpOrgUnban;
+		public string HelpOrgBan => new English().HelpOrgBan;
+		public string HelpRemoveWar => new English().HelpRemoveWar;
+		public string HelpAddWar => new English().HelpAddWar;
+		public string HelpImport => new English().HelpImport;
+		public string HelpUnshell => new English().HelpUnshell;
+		public string HelpShell => new English().HelpShell;
+		public string HelpRemoveClan => new English().HelpRemoveClan;
+		public string HelpAddClan => new English().HelpAddClan;
+		public string HelpLeagueRep => new English().HelpLeagueRep;
+		public string HelpGetOrgBans => new English().HelpGetOrgBans;
+		public string HelpRequestLeague => new English().HelpRequestLeague;
+		public string HelpInspect => new English().HelpInspect;
+		public string HelpCreateLeague => new English().HelpCreateLeague;
+		public string HelpChangeLeague => new English().HelpChangeLeague;
+		public string HelpChangeClan => new English().HelpChangeClan;
+		public string HelpChangeOrg => new English().HelpChangeOrg;
+		public string HelpChange => new English().HelpChange;
+		public string HelpCreateOrg => new English().HelpCreateOrg;
+		public string HelpValidate => new English().HelpValidate;
+		public string HelpScoreboard => "Voir le classement pour une liguez.";
+		public string HelpDivisions => "Voir les divisions dans une ligue donnée.";
+		public string HelpPatreon => "Montrez votre amour pour Minion Bot! Obtenez un rôle sur le serveur support avec quelques avantages.";
+		public string HelpHideAttacks => 
+@"Cela permettra de dissimuler toute attaque que vous avez réservée. Vous devez être un master patron pour utiliser cettecommande. Vos attaques sont réservées en ayant réclamé le village au moment de l'attaque ou par le biais de la commande claimattacks.";
+		public string HelpFreshDefense => "Les serveurs sponsorisés peuvent l'utiliser pour contrôler quel émoji est affiché pour une nouvelle défense one shot.";
+		public string HelpFreshAttack => "Les serveurs sponsorisés peuvent l'utiliser pour contrôler quel émoji est affiché pour une nouvelle attaque one shot.";
+		public string HelpFreshEmote => "Les serveurs sponsorisés peuvent l'utiliser pour contrôler quel émoji est affiché pour une nouvelle attaque ou défense trois étoiles.";
+		public string HelpMySponsorShip => "Voir tous les serveurs que vous sponsorisez.";
+		public string HelpUnsponsorServer => "Arrêter de sponsoriser un serveur. Vous pouvez obtenir l'ID du serveur via `mysponsorships`.";
+		public string HelpSponsorServer => "Voir les serveurs que vous sponsorisez actuellement.";
+		public string HelpWarChannel => "Cette commande renommera un salon pour refléter le nombre d'étoiles sur une base ennemie. Vous devez avoir la permission de gérer le salon.";
+		public string HelpDownloadAttacks => "Téléchargez un fichier contenant vos attaques.";
+		public string HelpVillageLeagueLeader =>
+@"Ceci montrera les meilleurs attaquants et défenseurs dans une ligue.
+Le nombre de mois limitera les attaques aux X derniers mois.
+La saison sera par défaut la saison en cours.
+Pour toutes les saisons, entrez 0.
+Le type one shot peut être one shot ou repassé.";
+		public string HelpVillageLeader => 
+@"Ceci indiquera votre rang au sein de votre clan.
+Le nombre de mois limitera les attaques aux X derniers mois.
+La saison sera par défaut la saison en cours.
+Pour toutes les saisons, entrez 0.
 Le type de guerre peut être farm, arrangée, compétitive ou SCCWL.
-Le type one shot peut être one shot ou repassé.",
-				"attackerTH defenderTH [numOfMonths] [warType] [\"defense\"] [freshType]"),
-			new CommandInfo(4, "clanleagueleader",
-@"Cela montrera quel clan a le meilleur taux de réussite dans une ligue.
-La saison sera par défaut la saison en cours.
-Pour toutes les saisons, entrez 0.
-Le type one shot peut être one shot ou repassé.",
-				"attackerTH defenderTH league [season] [\"defense\"] [freshType]"),
-			new CommandInfo(4, "clanstats",
-@"Obtenez les statistiques de l'historique complet des attaques d'un clan.
-Cela ressemblera aux statistiques d'un village, mais cela montrera l'ensemble du clan.
-Cela vous permet d'entrer le tag d'un autre clan pour comparer les clans.
-La saison sera par défaut la saison en cours.
-Pour toutes les saisons, entrez 0.
-Le type de guerre peut être farm, arrangée, compétitive ou SCCWL.",
-				"[clantag] [warType] [freshType]",
-				"[clantag] league [season] [freshType]",
-				"[clantag] numberOfMonths",
-				"none"
-				),
-			new CommandInfo(4, "leagueleader",
-@"Ceci montrera la ligue avec le meilleur taux de réussite.
-This will show the league with the best hit rate.
-Fresh type can be fresh or cleanup.",
-				"attackerTH defenderTH [\"defense\"] [freshType]"),
-			new CommandInfo(4, "stats",
+Le type one shot peut être one shot ou repassé.
+Le paramètre de clan exclura les attaques que vos coéquipiers de clans ont faites pendant qu'ils étaient dans d'autres clans.";
+		public string HelpCwlStats => "Ceci montrera les statistiques actuelles pour tous les clans dans votre actuelle ligue SCCWL.";
+		public string HelpStats =>
 @"Voir les statistiques pour la guerre actuelle, un village ou un utilisateur de Discord.
 Le nombre de mois limitera les attaques aux X derniers mois.
 La saison sera par défaut la saison en cours.
@@ -583,194 +482,108 @@ Pour toutes les saisons, entrez 0.
 Le type de guerre peut être farm, arrangée, compétitive ou SCCWL.
 Le type one shot peut être one shot ou repassé.
 Le paramètre de clan exclura les attaques que vos équipiers de clans ont faites pendant qu'ils étaient dans d'autres clans.
-Les ID de guerres peuvent être trouvés en utilisant la commande getwars.",
-				"#villageTag [numberOfMonths] [warType] [freshType] [\"clan\"]",
-				"#villageTag [numberOfMonths] league [season] [freshType]",
-				"@discordMention [numberOfMonths] [warType] [freshType] [\"clan\"]",
-				"@discordMention [numberOfMonths] league [season] [freshType]",
-				"none",
-				"warId"),
-			new CommandInfo(4, "cwlstats", "Ceci montrera les statistiques actuelles pour tous les clans dans votre actuelle ligue SCCWL.", "none", "#clanTag"),
-
-
-			new CommandInfo(4, "villageleader",
-@"Ceci indiquera votre rang au sein de votre clan.
-Le nombre de mois limitera les attaques aux X derniers mois.
+Les ID de guerres peuvent être trouvés en utilisant la commande getwars.";
+		public string HelpLeagueLeader =>
+@"Ceci montrera la ligue avec le meilleur taux de réussite.
+This will show the league with the best hit rate.
+Fresh type can be fresh or cleanup.";
+		public string HelpClanStats => 
+@"Obtenez les statistiques de l'historique complet des attaques d'un clan.
+Cela ressemblera aux statistiques d'un village, mais cela montrera l'ensemble du clan.
+Cela vous permet d'entrer le tag d'un autre clan pour comparer les clans.
 La saison sera par défaut la saison en cours.
 Pour toutes les saisons, entrez 0.
+Le type de guerre peut être farm, arrangée, compétitive ou SCCWL.";
+		public string HelpClanLeagueLeader => 
+@"Cela montrera quel clan a le meilleur taux de réussite dans une ligue.
+La saison sera par défaut la saison en cours.
+Pour toutes les saisons, entrez 0.
+Le type one shot peut être one shot ou repassé.";
+		public string HelpBotLeader => 
+@"Obtenez les meilleurs attaquants ou défenseurs dans l'ensemble du bot.
+Cela permettra d'obtenir les meilleurs taux de réussite pour tous les villages, quel que soit le clan.
 Le type de guerre peut être farm, arrangée, compétitive ou SCCWL.
-Le type one shot peut être one shot ou repassé.
-Le paramètre de clan exclura les attaques que vos coéquipiers de clans ont faites pendant qu'ils étaient dans d'autres clans.",
-				"attackerTH defenderTH [numberOfMonths] [league] [season] [\"defense\"] [freshType]",
-				"attackerTH defenderTH [numberOfMonths] [warType] [\"defense\"] [freshType] [\"clan\"]"),
-			new CommandInfo(4, "villageleagueleader",
-@"Ceci montrera les meilleurs attaquants et défenseurs dans une ligue.
-Le nombre de mois limitera les attaques aux X derniers mois.
-La saison sera par défaut la saison en cours.
-Pour toutes les saisons, entrez 0.
-Le type one shot peut être one shot ou repassé.",
-				"attackerTH defenderTH league [season] [\"defense\"] [freshType]"),
+Le type one shot peut être one shot ou repassé.";
+		public string HelpLeagueStats => "Montrer les statistiques pour cette semaine de guerres de clans.";
+		public string HelpLineup => "Voir les informations détaillées sur chaque village dans la guerre actuelle.";
+		public string HelpRoster => "Voir un résumé des villages dans une guerre donnée.";
+		public string HelpAttacks => "Montrer le nombre d'attaques restantes pour chaque côté de la carte de guerre.";
+		public string HelpAnnounceWar => "Imprimer l'annonce lorsqu'une guerre est trouvée.";
+		public string HelpDefenses => "Obtenez un résumé des défenses restantes.";
+		public string HelpMatchup => "Voir une comparaison clan par clan de la guerre actuelle.";
+		public string HelpGetWars => "Obtenez une liste de toutes les guerres connues pour un clan.";
+		public string HelpGetLastDefenses => "Voir les dernières défenses.";
+		public string HelpGetLastAttacks => "Voir les dernières attaques.";
+		public string HelpGetRemainingAttacks => "Cela montrera les attaques restantes pour votre clan. Cela montrera aussi si le village a une réservation.";
+		public string HelpNoStats => "Les attaques ne seront pas prises en compte dans les statistiques ni dans les classements si vous faites cela. Cela vous permet de mener une guerre amusante où les résultats n'ont pas d'importance. Vous devez être chef-adjoint pour le faire.";
+		public string HelpDelete => "Supprimer une réservation sur une base ennemie. Fournir uniquement la position ennemie supprimera votre propre ou la première réservation sur la base.";
+		public string HelpCall => "Réserver une base ennemie donnée.";
+		public string HelpReport => "Cette commande est uniquement pour les clans qui gardent leur journal de guerre privé. Utilisez la commande pour signaler le résultat d'une attaque.";
+		public string HelpStart => "Cette commande est uniquement pour les clans qui gardent leur journal de guerre privé. Utilisez la commande pour commencer une nouvelle guerre dans Minion Bot.";
+		public string HelpPrint => "Voir les villages qui sont réservés dans cette guerre.";
+		public string HelpPublicWars => "Dites à Minion Bot que vous allez garder le journal de guerre ouvert. Votre réservation de guerre sera directement pris en charge.";
+		public string HelpPrivateWars => "Dites à Minion Bot que vous allez garder le journal de guerre fermé. Cela permettra des commandes destinées aux journaux de guerre privés telles que \"start\" et \"report\"";
+		public string HelpStackCalls => "Quand c'est activé, plusieurs villages peuvent réserver une base ennemie en même temps.";
+		public string HelpCallTimer => "Mettez en place la durée d'une réservation.";
 
+		public string HelpSuperTroops => new English().HelpSuperTroops;
+		public string HelpClaimAttacks => 
+@"Ceci va enregistrer toutes les attaques pré?édemment non enregitrées.
+Ceci inclut les attaques et défenses faites avant que vous n'enregistriez le village.
+**?ette action est irréversible.**";
+		public string HelpUpdateMembers => "Mettre à hour les rôles et les niveaux d'héros pour tous les villages dans votre clan.";
+		public string HelpUnclaim => "Dissociez un village d'un utilisateur de Discord.";
 
+		public string HelpSearch => 
+@"Utilisez ceci pour voir quels villages sont dans votre clan.
+Utilisez ceci aussi pour avoir rapidement les tags des villages de vos coéquipiers de clan.
+Fournissez une chaîne de recherche pour limiter les résultats.";
+		public string HelpPrefer => 
+@"Minion Bot essayera d'utiliser le préfixe préféré au-dessus des autres alias.
+Vous pouvez avoir uniquement un alias préféré à la fois.
+Les alias doivent être uniques, vous devez fournir à cette commande le nom de l'alias.";
+		public string HelpMyBase => "Voir les informations d'une base donnée.";
+		public string HelpLookup => "Rechercher des informations diverses à propos d'un village.";
+		public string HelpMembers => "Voir tous les membres qui sont actuellement dans votre clan.";
+		public string HelpGetUnclaimed => "Voir tous les villages non enregistrés.";
+		public string HelpGetClaims => "Fournit une vue d'ensemble de tous les villages non enregistrés.";
+		public string HelpGetBans => "Voir tous les bans pour votre clan ou un village donné.";
+		public string HelpGetAlias => "Voir tous les pseudonymes pour un village.";
+		public string HelpDeleteAlias => 
+@"Utilisez ceci pour supprimer un ancien alias.
+Utile surtout après que vous changez le nom d'un village dans le jeu.
+Les alias doivent être uniques, vous devez fournir à cette commande le nom de l'alias.";
+		public string HelpClaim =>
+@"Dites au bot qui est le propriétaire du village.
+Utilisez une @MentionDiscord pour aider votre équipier de clan à enregistrer leur village.
+Si vous avez un problème à utiliser le nom du village, essayez d'utiliser le tag du village.";
+		public string HelpUnBanVillage => "Débannez un village de votre clan.";
+		public string HelpBanVillage => "Bannez un village de votre clan.";
+		public string HelpAlias => "Donnez un pseudonyme au village. Gardez le court et facile à écrire.";
+		public string HelpDeletePrefix => "Cette commande supprimera votre préfixe";
+		public string HelpSetPrefix =>
+@"Par défaut Minion Bot n'a pas de préfixe.
+Assignez en un de votre choix avec cette commande.
+Une fois assigné, les commandes requerrons le préfixe.
+Si votre préfixe est !, la commande d'aide sera !help.
+Utilisez deleteprefix pour annuler.";
 
-
-
-
-			//patreon
-			new CommandInfo(5, "downloadattacks", "Téléchargez un fichier contenant vos attaques.",
-				"none",
-				"warId",
-				"#villageTag",
-				"@discordMention"),
-			new CommandInfo(5, "warchannel",
-				"Cette commande renommera un salon pour refléter le nombre d'étoiles sur une base ennemie. Vous devez avoir la permission de gérer le salon.",
-				"none",
-				"defenderPosition"),
-			new CommandInfo(5, "sponsorserver", "Voir les serveurs que vous sponsorisez actuellement."),
-			new CommandInfo(5, "unsponsorserver", "Arrêter de sponsoriser un serveur. Vous pouvez obtenir l'ID du serveur via `mysponsorships`.", "[serverId]"),
-			new CommandInfo(5, "mysponsorship", "Voir tous les serveurs que vous sponsorisez."),
-			new CommandInfo(0, "freshemote",
-				"Les serveurs sponsorisés peuvent l'utiliser pour contrôler quel émoji est affiché pour une nouvelle attaque ou défense trois étoiles.",
-				"attackEmoji defennseEmoji"),
-			new CommandInfo(5, "freshattack",
-				"Les serveurs sponsorisés peuvent l'utiliser pour contrôler quel émoji est affiché pour une nouvelle attaque one shot.",
-				"attackEmoji"),
-			new CommandInfo(5, "freshdefense", "Les serveurs sponsorisés peuvent l'utiliser pour contrôler quel émoji est affiché pour une nouvelle défense one shot.",
-				"defenseEmoji"),
-			new CommandInfo(5, "hideattacks",
-@"Cela permettra de dissimuler toute attaque que vous avez réservée. Vous devez être un master patron pour utiliser cettecommande. Vos attaques sont réservées en ayant réclamé le village au moment de l'attaque ou par le biais de la commande claimattacks.",
-				"[true/false]",
-				"#villageTag [true/false]",
-				"#villageTag townhall [true/false]",
-				"olderThanXMonthsAgo [true/false]"),
-			new CommandInfo(5, "patreon", "Montrez votre amour pour Minion Bot! Obtenez un rôle sur le serveur support avec quelques avantages."),
-
-
-
-
-
-
-
-			//league
-			new CommandInfo(6, "divisions", "Voir les divisions dans une ligue donnée.", "league"),
-			new CommandInfo(6, "scoreboard", "Voir le classement pour une liguez.",
-				"none",
-				"org",
-				"league [season] [division] [#clanTag]"),
-			new CommandInfo(6, "validate", "Check a given clan to see if any members have any bans in competitive leagues.",
-				"none",
-				"#clanTag"),
-			new CommandInfo(6, "createorg", "Create an organization.", "orgName"),
-			new CommandInfo(6, "change", "Drill down to see more.", "\"org\"", "\"league\"", "\"clan\""),
-			new CommandInfo(6, "change org", "Change an organization.",
-				"\"name\" value",
-				"\"initials\" value",
-				"\"image\" value",
-				"\"state\" OffSeason/RegularSeason/Playoffs/Inactive",
-				"\"server\" url",
-				"\"category\" ulong",
-				"\"role\" ulong",
-				"\"guild\" ulong"),
-			new CommandInfo(6, "change league", "Change a league",
-				"\"state\" OffSeason/RegularSeason/Playoffs/Inactive",
-				"\"initials\" value",
-				"\"image\" url",
-				"\"season\" value",
-				"\"warmatch\" url",
-				"\"channel\" ulong",
-				"\"org\" ulong",
-				"\"autoupdate\" [true/false]"),
-			new CommandInfo(6, "change clan", "Change a registrant.",
-				"\"main\" #clanTag",
-				"\"active\" #clanTag",
-				"\"division\" division #clanTag"),
-			new CommandInfo(6, "createleague", "Create a league.", "none"),
-		new CommandInfo(6, "inspect", "View information about an object.",
-			"\"org\" [org]",
-			"\"league\" [league]",
-			"#clanTag",
-			"match [date] [#clanTag]"),
-			new CommandInfo(6, "requestleague",
-@"If the current war is a league war, run this command to request to mark it as a league war.
-Your request will be sent to the support server.
-A league rep will need to approve it.",
-				"leagueInitials"),
-			new CommandInfo(6, "getorgbans", "View all bans for an organization.", "leagueInitials", "orgInitials", "none"),
-			new CommandInfo(6, "leaguerep", "View all league reps or assign league rep to a member.", "none", "@discordMention", "orgInitials"),
-			new CommandInfo(6, "addclan", "Add clans to a league.", "list of #clanTags"),
-			new CommandInfo(6, "removeclan", "Remove a clan from a league.", "#clanTag"),
-			new CommandInfo(6, "shell", "Add a registrant clan under a participant.", "#shellTag #parentTag"),
-			new CommandInfo(6, "unshell", "Move a registrant to their own participant.", "#shellTag"),
-			//new CommandInfo(0, "autoupdate", "This command was retired. Use `change league state` or `import` instead."),
-			new CommandInfo(6, "import", "Import clan tags from a war match url.", "warMatchUrl", "warMatchId"),
-			new CommandInfo(6, "addwar", "Add a war to the league. If specifying clan tags you may want to update stars and percent next.",
-				"warId",
-				"#losingClan #winningClan [prepStartDate]"),
-			new CommandInfo(6, "removewar", "Remove a war from a league.", "warId"),
-			new CommandInfo(6, "orgban",
-"Ban villages from an organization. You will be notified if the village joins a registered clan or a war with a registered clan.",
-				"(list of #villageTags)",
-				"numOfDays (list of #villageTags)",
-				"mayJoinClans mayBeInRandomWars [numOfDays] (list of #villageTags)"),
-			new CommandInfo(6, "orgunban",
-"Delete bans on villages from your organization.",
-				"(list of #villageTags)"),
-			new CommandInfo(6, "changewinner",
-"Change the winner of a league war. This will only be seen in the scoreboard, not the league stats.",
-				"warId win/lose/tie #clanTag"),
-			new CommandInfo(6, "changestars",
-"Change the stars of a league war. This will only be seen in the scoreboard, not the league stats.",
-				"warId stars #clanTag"),
-			new CommandInfo(6, "changepercent",
-"Change the percent for a league war. This will only be seen in the scoreboard, not the league stats.",
-				"warId percent #clanTag"),
-			new CommandInfo(6, "leaguewinner", "Declare the league winner.", "#clanTag"),
-			new CommandInfo(6, "showprivatewars", "View all clans in this league which war log is private."),
-			new CommandInfo(6, "log", "Manually enter an attack. You can get map positions from the roster command.",
-				"warId #attackerClanTag attackerPosition defenderPosition stars percent"),
-			new CommandInfo(6, "undo", "Delete a manually entered attack.", "attackId"),
-			new CommandInfo(6, "setmatch",
-"Set a match date for two participating clans. The date is in UTC. When the two clans match on this day (or in the next seven days) it will be automatically approved. Use `deletematch` to undo this.",
-				"date #clanTag1 #clanTag2 #clanTagX ..."),
-			new CommandInfo(6, "deletematch", "Removes one or more scheduled matches",
-				"none", "date", "#clanTag", "date #clanTag"),
-			new CommandInfo(6, "removeallclans", "Remove all clans from the league."),
-			new CommandInfo(6, "removeallwars", "Remove all wars from the league."),
-
-
-
-
-
-
-
-			//debugging
-			new CommandInfo(7, "ping", "Inspecter la latence avec Discord."),
-			new CommandInfo(7, "permissions", "Inspecter les permissions données pour un membre.", "[@discordMention]"),
-			new CommandInfo(7, "fetchclan",
-				"Récupérer des informations sur un clan directement à partir de l'api.",
-				"[#clanTag]"),
-			new CommandInfo(7, "fetchclans", "Recherchez un clan par son nom dans l'api", "text"),
-			new CommandInfo(7, "fetchcurrentwar", "Retrouvez la guerre actuelle directement à partir de l'api.", "[#clanTag]"),
-			new CommandInfo(7, "fetchplayer", "Retrouvez les informations sur un joueur directement à partir de l'api.", "#villageTag"),
-			new CommandInfo(7, "fetchleaguegroup", "Récupérer les informations sur un groupe de ligue directement à partir de l'api.", "[#clanTag]"),
-			new CommandInfo(7, "fetchleaguewar", "Récupérer les informations sur une guerre de SCCWL directement à partir de l'api.", "#warTag"),
-			new CommandInfo(7, "fetchclanwarlog", "Récupérer les informations sur un journal de guerre directement à partir de l'api.", "[#clanTag]"),
-			new CommandInfo(7, "api", "Voir les temps de réponse de l'api.", "[numOfMinutes]"),
-
-
-
-
-
-
-			//about
-			new CommandInfo(8, "info", "Obtenez les informations basiques à propos de Minion Bot."),
-			new CommandInfo(8, "commands", "Obtenez une liste de toutes les commandes."),
-			new CommandInfo(8, "setupvideo", "Fournit un lien pour le tutoriel pour l'installation du bot."),
-			new CommandInfo(8, "fortwitch", "Fournit un link pour une version pour les streamers de Minion Bot. C'est un programme que vous utilisez sur votre ordinateur. Cela mettra à jour votre overlay pour vous."),
-			new CommandInfo(8, "invite", "Fournit un lien du serveur support et le lien d'invitation de Minion Bot."),
-
-
-
-		};
+		public string HelpSetLanguage => new English().HelpSetLanguage;
+		public string HelpStartWarning => new English().HelpStartWarning;
+		public string HelpEndWarning => new English().HelpEndWarning;
+		public string HelpPostGreetings => new English().HelpPostGreetings;
+		public string HelpPostDonations => new English().HelpPostDonations;
+		public string HelpPostHits => new English().HelpPostHits;
+		public string HelpRestrict => new English().HelpRestrict;
+		public string HelpAddRoles => new English().HelpAddRoles;
+		public string HelpDeleteRoles => new English().HelpDeleteRoles;
+		public string HelpMyChannels => new English().HelpMyChannels;
+		public string HelpMyChannel => new English().HelpMyChannel;
+		public string HelpMyRoles => new English().HelpMyRoles;
+		public string HelpMyClan => new English().HelpMyClan;
+		public string HelpMyServer => new English().HelpMyServer;
+		public string HelpMyClans => new English().HelpMyClans;
+		public string HelpDefaultClan => new English().HelpDefaultClan;
+		public string HelpUnclaimClan => new English().HelpUnclaimClan;
 	}
 }
