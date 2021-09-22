@@ -7,6 +7,10 @@ namespace MinionBot.Languages
         string Name { get; }
         string Aliases { get; }
         List<CommandInfo> Commands();
+
+
+        IBot Bot { get; }
+
         IManagementHelp ManagementHelp { get; }
         IAboutHelp AboutHelp { get; }
         IDebugHelp DebugHelp { get; }
