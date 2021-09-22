@@ -2,7 +2,7 @@
 * Translation provided by Mundelino
 */
 
-namespace MinionBot.Languages
+namespace MinionBot.Languages.German
 {
     public class Responses : AbstractLanguage, ILanguage
     {
