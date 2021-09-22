@@ -410,13 +410,18 @@ namespace MinionBot.Languages.French
 			=> $"You have unhidden {count} attacks.";
 
 
-
-
-
-
-
-
-
-
+		public string ClanNotFound => "Clan not found.";
+		public string SearchForClanReturnedNoResults(string clanTag) => $"Search for clan { clanTag } returned no results.";
+		public string NotADiscordServer => "Not a discord server.";
+		public string ServerNotFoundInCache => "Discord server not found in cache.";
+		public string NotAServerMember => "Not a server member.";
+		public string MemberNotFound => "MemberNotFound";
+		public string NotAMemberNorSelfTag => "Not a server member nor a self tag.";
+		public string OrganizationNotFound => "Organization not found.";
+		public string WarNotFound => "War not found.";
+		public string NotADate => "Not a date.";
+		public string DivisionNotFound => "Division not found.";
+		public string NotAUrl => "Not a valid url.";
+		public string ValidWarTypes => "Valid war types are farm, arranged, or comp";
 	}
 }

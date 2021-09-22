@@ -149,5 +149,18 @@ namespace MinionBot.Languages
         string YouHaveHiddenXAttacks(int count);
         string YouHaveUnhiddenXAttacks(int count);
         string CommandNotFound { get; }
+        string ClanNotFound { get; }
+        string SearchForClanReturnedNoResults(string clanTag);
+        string NotADiscordServer { get; }
+        string ServerNotFoundInCache { get; }
+        string NotAServerMember { get; }
+        string MemberNotFound { get; }
+        string NotAMemberNorSelfTag { get; }
+        string OrganizationNotFound { get; }
+        string WarNotFound { get; }
+        string NotADate { get; }
+        string DivisionNotFound { get; }
+        string NotAUrl { get; }
+        string ValidWarTypes { get; }
     }
 }
