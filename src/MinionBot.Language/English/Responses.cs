@@ -1,12 +1,23 @@
-﻿using System.Collections.Generic;
-
-namespace MinionBot.Language
+﻿namespace MinionBot.Languages.English
 {
-    public class English : AbstractLanguage, ILanguage
+    public class Responses : AbstractLanguage, ILanguage
     {
         public string Name => "en-US";
-
         public string Aliases { get; } = "en-US,en,us,english,🇺🇸,🇬🇧";
+
+
+        public IBot Bot { get; } = new Bot();
+
+
+        public IManagementHelp ManagementHelp { get; } = new ManagementHelp();
+        public IAboutHelp AboutHelp { get; } = new AboutHelp();
+        public IDebugHelp DebugHelp { get; } = new DebugHelp();
+        public ILeagueHelp LeagueHelp { get; } = new LeagueHelp();
+        public IVillageHelp VillageHelp { get; } = new VillageHelp();
+        public IPatreonHelp PatreonHelp { get; } = new PatreonHelp();
+        public IWarHelp WarHelp { get; } = new WarHelp();
+        public IStatsHelp StatsHelp { get; } = new StatsHelp();
+
 
         public string ThisLeagueIsInactive
             => "This league is inactive or in offseason. If that is not correct, please join the support server and ping your league representatives.";
@@ -94,7 +105,7 @@ namespace MinionBot.Language
             => $"No village was found in {tag} {clanName} with a tag or name of {input}.";
 
         public string YourClanCouldNotBeDetermined
-            => "Your clan could not be determined.";  
+            => "Your clan could not be determined.";
 
         public string YouMustBeACoLeaderToUnclaimAVillage
             => "You must be a coleader or have manage channels permission to unclaim a village.";
@@ -320,7 +331,7 @@ namespace MinionBot.Language
         public string ServerWillNowUseEmojiForDefenses(string emoji, string clanTag, string clanName)
             => $"Fresh 3 star defenses will now display {emoji} for {clanTag} {clanName}";
 
-        public string CommandMustBeRanInACategory 
+        public string CommandMustBeRanInACategory
             => "This command must be ran in a category.";
 
         public string ThisCommandWillRenameAllChannels(string clanTag, string clanName)
@@ -386,266 +397,5 @@ namespace MinionBot.Language
 
         public string CommandNotFound
             => "Command not found.";
-
-
-
-
-        // management
-        public string HelpClaimClan => 
-@"Run this command for each clan you want to claim in a different channel.
-You must put the letters 'mb' after the clan description for this to work.";
-
-        public string HelpUnclaimClan => 
-@"You may remove a clan from your server.
-To add it back, you will need to add 'mb' to the description again.";
-
-        public string HelpDefaultClan => 
-@"Allows you to tell Minion Bot which clan to use in channels where claimclan has never been ran.
-You may run this after running claimclan.
-The first clan you claim in a server is automatcally the default clan.";
-
-        public string HelpMyClans => "View all the clans your server has claimed.";
-
-        public string HelpMyServer => "Get information about your server.";
-
-        public string HelpMyClan => "Use this command to see what clan tag Minion Bot is using in a given channel.";
-
-        public string HelpMyRoles => "Get the roles that are managed by this bot.";
-
-        public string HelpMyChannel => "Get information on your channel's settings.";
-
-        public string HelpMyChannels => "Get information on all of your channel settings.";
-
-        public string HelpDeleteRoles => "This will delete all of the roles that were created by this bot.";
-
-        public string HelpAddRoles => 
-@"This will create predefined roles in this server.
-These roles will be assigned automatically.
-You can rename or delete the roles created by this command.";
-
-        public string HelpRestrict => "This will make Minion Bot ignore commands in a channel. It is recommended that you use discord permissions instead of this command.";
-
-        public string HelpPostHits => "Control what channels the attacks get posted to. You must have permission to manage channel to change the channel.";
-
-        public string HelpPostDonations => "Control what channel donations are posted to. You must have permission to manage channel.";
-
-        public string HelpPostGreetings => "Control what channel greetings are posted to. You must have permission to manage channel.";
-
-        public string HelpEndWarning => "Toggle hasHits mentions for the war end warning. If you do not have the hasHits role this will not do anything.";
-
-        public string HelpStartWarning => "Toggle hasHits mentions for the war start warning. If you do not have the hasHits role this will not do anything.";
-
-        public string HelpSetLanguage => "Change the language. Visit [github.com](https://github.com/devhl-labs/MinionBot5.Language) to view the supported languages.";
-
-        public string HelpSetPrefix => 
-@"By default Minion Bot has no prefix. 
-Assign one of your choice with this command.
-Once assigned, commands will require the prefix to run.
-If your prefix is !, the help command will look like !help.
-Use deleteprefix to undo this.";
-
-        public string HelpDeletePrefix => "This command will delete your prefix.";
-
-        public string HelpAlias => "Give a village a nickname. Keep it short and easy to type.";
-
-        public string HelpBanVillage => "Ban a village from your clan.";
-
-        public string HelpUnBanVillage => "Unban a village from your clan.";
-
-        public string HelpClaim => 
-@"Tell the bot who owns a village.
-Use a @discordMention to help your clanmates claim their village.
-If you're having trouble using the name of the village, try using the village tag.";
-
-        public string HelpDeleteAlias =>
-@"Use this to delete an old alias.
-Especially useful after you change a village name in game.
-Aliases should be unique, so you should only have to provide this command the alias name.";
-
-        public string HelpGetAlias => "View all nicknames for a village.";
-
-        public string HelpGetBans => "View all bans for your clan or a given village.";
-
-        public string HelpGetClaims => "Provides an overview of which villages are claimed.";
-
-        public string HelpGetUnclaimed => "View all villages that are not claimed.";
-
-        public string HelpMembers => "View all the members who are currently in your clan.";
-
-        public string HelpLookup => "Lookup various information about a village.";
-
-        public string HelpMyBase => "View information on a given base.";
-
-        public string HelpPrefer =>
-@"Minion Bot will try to use the prefered alias over other aliases.
-You may only have one prefered alias at a time.
-Aliases should be unique, so you only need to provide the alias name.";
-
-        public string HelpSearch => 
-@"Use this to see what villages are in your clan.
-Also use it to quickly get your clanmates village tag.
-Provide a string to search to narrow the results.";
-
-        public string HelpUnclaim => "Unassociate a village from a discord user.";
-
-        public string HelpUpdateMembers => "Update roles and hero levels for all villages in your clan.";
-
-        public string HelpClaimAttacks => 
-@"This will claim all previously unclaimed attacks.
-This includes attacks and defenses done before you claimed the village.
-**This cannot be undone.**";
-        public string HelpSuperTroops => "See what villages have super troops unlocked.";
-
-
-        //war
-        public string HelpCallTimer => "Set the amount of time a call is good for.";
-        public string HelpStackCalls => "When enabled, multiple villages can call an enemy base at the same time.";
-        public string HelpPrivateWars =>
-"Tell Minion Bot that you will keep your war log closed. This will enable commands intended for private war logs such as start and report.";
-        public string HelpPublicWars => "Tell Minion Bot that you will keep your war log open. Your war caller will be managed automatically.";
-        public string HelpPrint => "View the villages that are called in this war.";
-        public string HelpStart => "This command is only for clans that keep their war log private. Use it to start a new war in Minion Bot.";
-        public string HelpReport => "This command is only for clans that keep their war log private. Use it to report the outcome of an attack.";
-        public string HelpCall => "Call a given enemy base.";
-        public string HelpDelete =>
-"Delete a call on an enemy base. Only providing the defender position will delete your own call on the base, or the first call on that base.";
-        public string HelpNoStats => 
-"Attacks will not count toward stats nor leaderboards if you run this. This enables you to have a fun war where the results don't matter. You must be a coleader to run this.";
-        public string HelpGetRemainingAttacks =>
-"This will show who has attacks left for your clan. If the village has a call, it will show that as well.";
-        public string HelpGetLastAttacks => "View the last attacks.";
-        public string HelpGetLastDefenses => "View the last defenses.";
-        public string HelpGetWars => "Get a list of all known wars for a clan.";
-        public string HelpMatchup => "View a side by side comparison of the current war.";
-        public string HelpDefenses => "Get a summary of defenses remaining.";
-        public string HelpAnnounceWar => "Print the war found announcement.";
-        public string HelpAttacks => "Show the number of attacks left for each side of the war map.";
-        public string HelpRoster => "View a summary of the villages in a given war.";
-        public string HelpLineup => "View detailed information on each village in the current war.";
-
-
-        //stats
-        public string HelpLeagueStats => "Show the stats for this week's league wars.";
-        public string HelpBotLeader =>
-@"Get the best attackers or defenders in the entire bot.
-This will get the best hit rates for all villages, regardless of clan.
-War Type can be farm, arranged, competetive, or SCCWL.
-Fresh type can be fresh or cleanup.";
-        public string HelpClanLeagueLeader =>
-@"This will show which clan has the best hit rate in a league.
-The season will default to the current season.
-For all seasons, enter 0.
-Fresh type can be fresh or cleanup.";
-        public string HelpClanStats =>
-@"Get stats from a clans entire attack history.
-This will look like the stats for a village, but it will show the entire clan.
-This allows you to enter other clan's tag to compare clans.
-The season will default to the current season.
-For all seasons, enter 0.
-War type can be farm, arranged, competetive, or SCCWL.";
-        public string HelpLeagueLeader => "This command is retired";
-        //"This will show the league with the best hit rate. Fresh type can be fresh or cleanup."
-        public string HelpStats =>
-@"View the stats for the current war, a village, or a discord user.
-Number of months will limit the attacks to the last X months.
-The season will default to the current season.
-For all seasons, enter 0.
-War type can be farm, arranged, competetive, or SCCWL.
-Fresh type can be fresh or cleanup.
-The clan parameter will exclude attacks your clanmates have done while in other clans.
-War IDs can be found using the getwars command.";
-        public string HelpCwlStats => "This will show the current wars for all clans in your current SC CWL league.";
-        public string HelpVillageLeader =>
-@"This will show where you rank among your clan.
-Number of months will limit the attacks to the last X months.
-The season will default to the current season.
-For all seasons, enter 0.
-War type can be farm, arranged, competetive, or SCCWL.
-Fresh type can be fresh or cleanup.
-The clan parameter will exclude attacks your clanmates have done while in other clans.";
-        public string HelpVillageLeagueLeader =>
-@"This will show the best attackers and defenders in a league.
-The season will default to the current season.
-For all seasons, enter 0.
-Fresh type can be fresh or cleanup.";
-
-
-        //patreon
-        public string HelpDownloadAttacks => "Download a file containing your attacks.";
-        public string HelpWarChannel =>
-"This command will rename a channel to reflect the number of stars on an enemy base. You must have permission to manage channel.";
-        public string HelpSponsorServer => "Sponsor the current server.";
-        public string HelpUnsponsorServer => "Stop sponsoring a server. You can get the server ID from `mysponsorships`.";
-        public string HelpMySponsorShip => "View all of the servers you are sponsoring.";
-        public string HelpFreshEmote => "Sponsored servers can use this to control what emoji is displayed for a fresh three star attack or defense.";
-        public string HelpFreshAttack => "Sponsored servers can use this to control what emoji is displayed for a fresh three star attack.";
-        public string HelpFreshDefense => "Sponsored servers can use this to control what emoji is displayed for a fresh three star defense.";
-        public string HelpHideAttacks =>
-@"This will hide any attack that you have claimed. You must be a master patron to use this command. Your attacks are claimed by having the village claimed while the attack occurs or throught the claimattacks command.";
-        public string HelpPatreon => "Show your love for Minion Bot! Get a role in the support server and a few added perks.";
-
-
-        //league
-        public string HelpDivisions => "View the divisions in a given league.";
-        public string HelpScoreboard => "View the scoreboard for a league.";
-        public string HelpValidate => "Check a given clan to see if any members have any bans in competitive leagues.";
-        public string HelpCreateOrg => "Create an organization.";
-        public string HelpChange => "Drill down to see more.";
-        public string HelpChangeOrg => "Change an organization.";
-        public string HelpChangeClan => "Change a registrant.";
-        public string HelpChangeLeague => "Change a league.";
-        public string HelpCreateLeague => "Create a league.";
-        public string HelpInspect => "View information about an object.";
-        public string HelpRequestLeague =>
-@"If the current war is a league war, run this command to request to mark it as a league war.
-Your request will be sent to the support server.
-A league rep will need to approve it.";
-        public string HelpGetOrgBans => "View all bans for an organization.";
-        public string HelpLeagueRep => "View all league reps or assign league rep to a member.";
-        public string HelpAddClan => "Add clans to a league.";
-        public string HelpRemoveClan => "Remove a clan from a league.";
-        public string HelpShell => "Add a registrant clan under a participant.";
-        public string HelpUnshell => "Move a registrant to their own participant.";
-        public string HelpImport => "Import clan tags from a war match url.";
-        public string HelpAddWar => "Add a war to the league. If specifying clan tags you may want to update stars and percent next.";
-        public string HelpRemoveWar => "Remove a war from a league.";
-        public string HelpOrgBan => 
-"Ban villages from an organization. You will be notified if the village joins a registered clan or a war with a registered clan.";
-        public string HelpOrgUnban => "Delete bans on villages from your organization.";
-        public string HelpChangeWinner => "Change the winner of a league war. This will only be seen in the scoreboard, not the league stats.";
-        public string HelpChangeStars => "Change the stars of a league war. This will only be seen in the scoreboard, not the league stats.";
-        public string HelpChangePercent => "Change the percent for a league war. This will only be seen in the scoreboard, not the league stats.";
-        public string HelpLeagueWinner => "Declare the league winner.";
-        public string HelpShowPrivateWars => "View all clans in this league which war log is private.";
-        public string HelpLog => "Manually enter an attack. You can get map positions from the roster command.";
-        public string HelpUndo => "Delete a manually entered attack.";
-        public string HelpSetMatch =>
-"Set a match date for two participating clans. The date is in UTC. When the two clans match on this day (or in the next seven days) it will be automatically approved. Use `deletematch` to undo this.";
-        public string HelpDeleteMatch => "Removes one or more scheduled matches";
-        public string HelpRemoveAllClans => "Remove all clans from the league.";
-        public string HelpRemoveAllWars => "Remove all wars from the league.";
-
-
-        //debugging
-        public string HelpPing => "Inspect latency with Discord.";
-        public string HelpPermissions => "Retrieve information on a clan directly from the api.";
-        public string HelpFetchClan => "Retrieve information on a clan directly from the api.";
-        public string HelpFetchClans => "Search the api for a clan by name.";
-        public string HelpFetchCurrentWar => "Retrive the current war directly from the api.";
-        public string HelpFetchPlayer => "Retrive information on a player directly from the api.";
-        public string HelpFetchLeagueGroup => "Retrieve information on a league group directly from the api.";
-        public string HelpFetchLeagueWar => "Retrieve information on a SC CWL war directly from the api.";
-        public string HelpFetchClanWarLog => "Retrieve information on a war log directly from the api.";
-        public string HelpApi => "View api response times.";
-
-
-        //about
-        public string HelpInfo => "Get basic information on Minion Bot.";
-        public string HelpCommands => "Get a list of all commands.";
-        public string HelpSetupVideo => "Provides a link to a setup tutorial.";
-        public string HelpForTwitch =>
-"Provides a link to a version of Minion Bot for streamers. This is a program you run on your computer. It will update your overlay for you.";
-        public string HelpInvite => "Provides a link to the support server and to invite Minion Bot.";
-
     }
 }

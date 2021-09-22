@@ -2,13 +2,26 @@
 * Translation provided by Mundelino
 */
 
-namespace MinionBot.Language
+namespace MinionBot.Languages
 {
-    public class German : AbstractLanguage, ILanguage
+    public class Responses : AbstractLanguage, ILanguage
     {
         public string Name => "ge-GE";
-
         public string Aliases { get; } = "ge-GE,ge,german,:flag_de:";
+
+
+        public IBot Bot { get; } = new English.Bot();
+
+
+        public ILeagueHelp LeagueHelp { get; } = new English.LeagueHelp();
+        public IManagementHelp ManagementHelp { get; } = new English.ManagementHelp();
+        public IAboutHelp AboutHelp { get; } = new English.AboutHelp();
+        public IDebugHelp DebugHelp { get; } = new English.DebugHelp();
+        public IVillageHelp VillageHelp { get; } = new English.VillageHelp();
+        public IPatreonHelp PatreonHelp { get; } = new English.PatreonHelp();
+        public IWarHelp WarHelp { get; } = new English.WarHelp();
+        public IStatsHelp StatsHelp { get; } = new English.StatsHelp();
+
 
         public string ThisLeagueIsInactive
             => "This league is inactive or in offseason. If that is not correct, please join the support server and ping your league representatives.";
@@ -393,131 +406,5 @@ namespace MinionBot.Language
 
         public string CommandNotFound
             => "Der Befehl wurde nicht gefunden.";
-
-        public string HelpClaimClan => new English().HelpClaimClan;
-        public string HelpInvite => new English().HelpInvite;
-        public string HelpForTwitch => new English().HelpForTwitch;
-        public string HelpSetupVideo => new English().HelpSetupVideo;
-        public string HelpCommands => new English().HelpCommands;
-        public string HelpInfo => new English().HelpInfo;
-        public string HelpApi => new English().HelpApi;
-        public string HelpFetchClanWarLog => new English().HelpFetchClanWarLog;
-        public string HelpFetchLeagueWar => new English().HelpFetchLeagueWar;
-        public string HelpFetchLeagueGroup => new English().HelpFetchLeagueGroup;
-        public string HelpFetchPlayer => new English().HelpFetchPlayer;
-        public string HelpFetchCurrentWar => new English().HelpFetchCurrentWar;
-        public string HelpFetchClans => new English().HelpFetchClans;
-        public string HelpFetchClan => new English().HelpFetchClan;
-        public string HelpPermissions => new English().HelpPermissions;
-        public string HelpPing => new English().HelpPing;
-        public string HelpRemoveAllWars => new English().HelpRemoveAllWars;
-        public string HelpRemoveAllClans => new English().HelpRemoveAllClans;
-        public string HelpDeleteMatch => new English().HelpDeleteMatch;
-        public string HelpSetMatch => new English().HelpSetMatch;
-        public string HelpUndo => new English().HelpUndo;
-        public string HelpLog => new English().HelpLog;
-        public string HelpShowPrivateWars => new English().HelpShowPrivateWars;
-        public string HelpLeagueWinner => new English().HelpLeagueWinner;
-        public string HelpChangePercent => new English().HelpChangePercent;
-        public string HelpChangeStars => new English().HelpChangeStars;
-        public string HelpChangeWinner => new English().HelpChangeWinner;
-        public string HelpOrgUnban => new English().HelpOrgUnban;
-        public string HelpOrgBan => new English().HelpOrgBan;
-        public string HelpRemoveWar => new English().HelpRemoveWar;
-        public string HelpAddWar => new English().HelpAddWar;
-        public string HelpImport => new English().HelpImport;
-        public string HelpUnshell => new English().HelpUnshell;
-        public string HelpShell => new English().HelpShell;
-        public string HelpRemoveClan => new English().HelpRemoveClan;
-        public string HelpAddClan => new English().HelpAddClan;
-        public string HelpLeagueRep => new English().HelpLeagueRep;
-        public string HelpGetOrgBans => new English().HelpGetOrgBans;
-        public string HelpRequestLeague => new English().HelpRequestLeague;
-        public string HelpInspect => new English().HelpInspect;
-        public string HelpCreateLeague => new English().HelpCreateLeague;
-        public string HelpChangeLeague => new English().HelpChangeLeague;
-        public string HelpChangeClan => new English().HelpChangeClan;
-        public string HelpChangeOrg => new English().HelpChangeOrg;
-        public string HelpChange => new English().HelpChange;
-        public string HelpCreateOrg => new English().HelpCreateOrg;
-        public string HelpValidate => new English().HelpValidate;
-        public string HelpScoreboard => new English().HelpScoreboard;
-        public string HelpDivisions => new English().HelpDivisions;
-        public string HelpPatreon => new English().HelpPatreon;
-        public string HelpHideAttacks => new English().HelpHideAttacks;
-        public string HelpFreshDefense => new English().HelpFreshDefense;
-        public string HelpFreshAttack => new English().HelpFreshAttack;
-        public string HelpFreshEmote => new English().HelpFreshEmote;
-        public string HelpMySponsorShip => new English().HelpMySponsorShip;
-        public string HelpUnsponsorServer => new English().HelpUnsponsorServer;
-        public string HelpSponsorServer => new English().HelpSponsorServer;
-        public string HelpWarChannel => new English().HelpWarChannel;
-        public string HelpDownloadAttacks => new English().HelpDownloadAttacks;
-        public string HelpVillageLeagueLeader => new English().HelpVillageLeagueLeader;
-        public string HelpVillageLeader => new English().HelpVillageLeader;
-        public string HelpCwlStats => new English().HelpCwlStats;
-        public string HelpStats => new English().HelpStats;
-        public string HelpLeagueLeader => new English().HelpLeagueLeader;
-        public string HelpClanStats => new English().HelpClanStats;
-        public string HelpClanLeagueLeader => new English().HelpClanLeagueLeader;
-        public string HelpBotLeader => new English().HelpBotLeader;
-        public string HelpLeagueStats => new English().HelpLeagueStats;
-        public string HelpLineup => new English().HelpLineup;
-        public string HelpRoster => new English().HelpRoster;
-        public string HelpAttacks => new English().HelpAttacks;
-        public string HelpAnnounceWar => new English().HelpAnnounceWar;
-        public string HelpDefenses => new English().HelpDefenses;
-        public string HelpMatchup => new English().HelpMatchup;
-        public string HelpGetWars => new English().HelpGetWars;
-        public string HelpGetLastDefenses => new English().HelpGetLastDefenses;
-        public string HelpGetLastAttacks => new English().HelpGetLastAttacks;
-        public string HelpGetRemainingAttacks => new English().HelpGetRemainingAttacks;
-        public string HelpNoStats => new English().HelpNoStats;
-        public string HelpDelete => new English().HelpDelete;
-        public string HelpCall => new English().HelpCall;
-        public string HelpReport => new English().HelpReport;
-        public string HelpStart => new English().HelpStart;
-        public string HelpPrint => new English().HelpPrint;
-        public string HelpPublicWars => new English().HelpPublicWars;
-        public string HelpPrivateWars => new English().HelpPrivateWars;
-        public string HelpStackCalls => new English().HelpStackCalls;
-        public string HelpCallTimer => new English().HelpCallTimer;
-        public string HelpSuperTroops => new English().HelpSuperTroops;
-        public string HelpClaimAttacks => new English().HelpClaimAttacks;
-        public string HelpUnclaim => new English().HelpUnclaim;
-        public string HelpSearch => new English().HelpSearch;
-        public string HelpPrefer => new English().HelpPrefer;
-        public string HelpMyBase => new English().HelpMyBase;
-        public string HelpLookup => new English().HelpLookup;
-        public string HelpMembers => new English().HelpMembers;
-        public string HelpGetUnclaimed => new English().HelpGetUnclaimed;
-        public string HelpGetClaims => new English().HelpGetClaims;
-        public string HelpGetBans => new English().HelpGetBans;
-        public string HelpGetAlias => new English().HelpGetAlias;
-        public string HelpDeleteAlias => new English().HelpDeleteAlias;
-        public string HelpClaim => new English().HelpDeleteAlias;
-        public string HelpUnBanVillage => new English().HelpUnBanVillage;
-        public string HelpBanVillage => new English().HelpBanVillage;
-        public string HelpAlias => new English().HelpAlias;
-        public string HelpDeletePrefix => new English().HelpDeletePrefix;
-        public string HelpSetPrefix => new English().HelpSetPrefix;
-        public string HelpSetLanguage => new English().HelpSetLanguage;
-        public string HelpStartWarning => new English().HelpStartWarning;
-        public string HelpEndWarning => new English().HelpEndWarning;
-        public string HelpPostGreetings => new English().HelpPostGreetings;
-        public string HelpPostDonations => new English().HelpPostDonations;
-        public string HelpPostHits => new English().HelpPostHits;
-        public string HelpRestrict => new English().HelpRestrict;
-        public string HelpAddRoles => new English().HelpAddRoles;
-        public string HelpDeleteRoles => new English().HelpDeleteRoles;
-        public string HelpMyChannels => new English().HelpMyChannels;
-        public string HelpMyChannel => new English().HelpMyChannel;
-        public string HelpMyRoles => new English().HelpMyRoles;
-        public string HelpMyClan => new English().HelpMyClan;
-        public string HelpMyServer => new English().HelpMyServer;
-        public string HelpMyClans => new English().HelpMyClans;
-        public string HelpDefaultClan => new English().HelpDefaultClan;
-        public string HelpUnclaimClan => new English().HelpUnclaimClan;
-        public string HelpUpdateMembers => new English().HelpUpdateMembers;
     }    
 }
