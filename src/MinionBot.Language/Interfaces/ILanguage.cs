@@ -162,5 +162,7 @@ namespace MinionBot.Languages
         string DivisionNotFound { get; }
         string NotAUrl { get; }
         string ValidWarTypes { get; }
+        string CommandMustBeRanInYourServer { get; }
+        string YouMustHavePermissionToManageChannels { get; }
     }
 }

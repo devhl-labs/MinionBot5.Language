@@ -403,13 +403,15 @@
         public string NotADiscordServer => "Not a discord server.";
         public string ServerNotFoundInCache => "Discord server not found in cache.";
         public string NotAServerMember => "Not a server member.";
-        public string MemberNotFound => "MemberNotFound";
+        public string MemberNotFound => "Member not found.";
         public string NotAMemberNorSelfTag => "Not a server member nor a self tag.";
         public string OrganizationNotFound => "Organization not found.";
         public string WarNotFound => "War not found.";
         public string NotADate => "Not a date.";
         public string DivisionNotFound => "Division not found.";
         public string NotAUrl => "Not a valid url.";
-        public string ValidWarTypes => "Valid war types are farm, arranged, or comp";
+        public string ValidWarTypes => "Valid war types are farm, arranged, or comp.";
+        public string CommandMustBeRanInYourServer => "This command must be ran in your server.";
+        public string YouMustHavePermissionToManageChannels => "You must have permission to manage channels.";
     }
 }
