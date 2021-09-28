@@ -422,5 +422,7 @@ namespace MinionBot.Languages.German
         public string ValidWarTypes => "Valid war types are farm, arranged, or comp.";
         public string CommandMustBeRanInYourServer => "This command must be ran in your server.";
         public string YouMustHavePermissionToManageChannels => "You must have permission to manage channels.";
+        public string MbGoesInGame => "You're using this command wrong. \"mb\" does not go here, it goes in game in your clan description.";
+        public string YourClanTagDoesNotEndInAPeriod => "Your clan tag does not end with a period. Try again without the period.";
     }    
 }

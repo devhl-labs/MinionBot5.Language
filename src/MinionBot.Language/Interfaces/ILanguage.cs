@@ -164,5 +164,8 @@ namespace MinionBot.Languages
         string ValidWarTypes { get; }
         string CommandMustBeRanInYourServer { get; }
         string YouMustHavePermissionToManageChannels { get; }
+        string MbGoesInGame { get; }
+
+        string YourClanTagDoesNotEndInAPeriod { get; }
     }
 }
