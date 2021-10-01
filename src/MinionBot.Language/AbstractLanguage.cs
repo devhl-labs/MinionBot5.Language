@@ -46,6 +46,7 @@ namespace MinionBot.Languages
                 new CommandInfo(1, "setlanguage", Language.ManagementHelp.HelpSetLanguage, "languageName"),
                 new CommandInfo(1, "setprefix", Language.ManagementHelp.HelpSetPrefix, "yourPrefix"),
                 new CommandInfo(1, "deleteprefix", Language.ManagementHelp.HelpDeletePrefix),
+                new CommandInfo(1, "warpreferences", Language.ManagementHelp.HelpWarPreference),
 
 
                 //villages
