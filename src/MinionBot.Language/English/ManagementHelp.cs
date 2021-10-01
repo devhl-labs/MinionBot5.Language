@@ -2,6 +2,7 @@
 {
     public class ManagementHelp : IManagementHelp
     {
+        public string HelpWarPreference => "View the villages ready for war.";
         public string HelpUnclaimClan =>
 @"You may remove a clan from your server.
 To add it back, you will need to add 'mb' to the description again.";

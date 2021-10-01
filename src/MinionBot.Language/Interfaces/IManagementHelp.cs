@@ -22,5 +22,6 @@
         string HelpDefaultClan { get; }
         string HelpUnclaimClan { get; }
         string HelpClaimClan { get; }
+        string HelpWarPreference { get; }
     }
 }

@@ -6,6 +6,7 @@ namespace MinionBot.Languages.French
 {
 	public class ManagementHelp : IManagementHelp
 	{
+		public string HelpWarPreference => "View the villages ready for war.";
 		public string HelpDeletePrefix => "Cette commande supprimera votre préfixe";
 		public string HelpSetPrefix =>
 @"Par défaut Minion Bot n'a pas de préfixe.
