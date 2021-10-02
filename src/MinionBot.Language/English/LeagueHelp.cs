@@ -2,6 +2,7 @@
 {
     public class LeagueHelp : ILeagueHelp
     {
+        public string HelpEditWar => "Edit the result of a war. This will appear in scoreboard, but not in stats command.";
         public string HelpDivisions => "View the divisions in a given league.";
         public string HelpScoreboard => "View the scoreboard for a league.";
         public string HelpValidate => "Check a given clan to see if any members have any bans in competitive leagues.";

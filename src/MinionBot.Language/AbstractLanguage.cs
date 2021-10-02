@@ -189,6 +189,7 @@ namespace MinionBot.Languages
 
 
                 //league
+                new CommandInfo(6, "editwar", Language.LeagueHelp.HelpEditWar, "warId"),
                 new CommandInfo(6, "divisions", Language.LeagueHelp.HelpDivisions, "league"),
                 new CommandInfo(6, "scoreboard", Language.LeagueHelp.HelpScoreboard,
                     "none",
