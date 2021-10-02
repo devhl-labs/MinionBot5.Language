@@ -167,6 +167,7 @@ namespace MinionBot.Languages
         string YouMustHavePermissionToManageChannels { get; }
         string MbGoesInGame { get; }
         string YourClanTagDoesNotEndInAPeriod { get; }
-        string YouHaveBeenAssignedTheRole { get; }
+        string RoleGranted { get; }
+        string RoleRevoked { get; }
     }
 }
