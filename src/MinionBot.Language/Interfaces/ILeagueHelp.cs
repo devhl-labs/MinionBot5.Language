@@ -2,6 +2,7 @@
 {
     public interface ILeagueHelp
     {
+        string HelpLeaugeViewer { get; }
         string HelpEditWar { get; }
         string HelpRemoveAllWars { get; }
         string HelpRemoveAllClans { get; }

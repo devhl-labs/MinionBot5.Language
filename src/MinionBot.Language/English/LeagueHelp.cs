@@ -2,6 +2,7 @@
 {
     public class LeagueHelp : ILeagueHelp
     {
+        public string HelpLeaugeViewer => "Add or remove a role to view a league channel.";
         public string HelpEditWar => "Edit the result of a war. This will appear in scoreboard, but not in stats command.";
         public string HelpDivisions => "View the divisions in a given league.";
         public string HelpScoreboard => "View the scoreboard for a league.";

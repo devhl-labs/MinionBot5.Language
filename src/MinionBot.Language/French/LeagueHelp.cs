@@ -2,7 +2,8 @@
 {
 	public class LeagueHelp : ILeagueHelp
 	{
-		public string HelpEditWar => "Edit the result of a war. This will appear in scoreboard, but not in stats command.";
+		public string HelpLeaugeViewer => new English.LeagueHelp().HelpLeaugeViewer;
+		public string HelpEditWar => new English.LeagueHelp().HelpEditWar;
 		public string HelpRemoveAllWars => new English.LeagueHelp().HelpRemoveAllWars;
 		public string HelpRemoveAllClans => new English.LeagueHelp().HelpRemoveAllClans;
 		public string HelpDeleteMatch => new English.LeagueHelp().HelpDeleteMatch;
