@@ -2,6 +2,8 @@
 {
     public interface ILeagueHelp
     {
+        string HelpOrgClanBan { get; }
+        string HelpUnOrgClanBan { get; }
         string HelpLeaugeViewer { get; }
         string HelpEditWar { get; }
         string HelpRemoveAllWars { get; }

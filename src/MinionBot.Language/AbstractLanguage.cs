@@ -189,6 +189,8 @@ namespace MinionBot.Languages
 
 
                 //league
+                new CommandInfo(6, "orgclanban", Language.LeagueHelp.HelpOrgClanBan, "#clanTags", "length #clanTags"),
+                new CommandInfo(6, "unorgclanban", Language.LeagueHelp.HelpOrgClanBan, "#clanTag"),
                 new CommandInfo(6, "leagueviewer", Language.LeagueHelp.HelpLeaugeViewer, "none", "@discordMention", "orgInitials", "leagueInitials"),
                 new CommandInfo(6, "editwar", Language.LeagueHelp.HelpEditWar, "warId"),
                 new CommandInfo(6, "divisions", Language.LeagueHelp.HelpDivisions, "league"),

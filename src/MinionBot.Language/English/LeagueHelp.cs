@@ -2,6 +2,8 @@
 {
     public class LeagueHelp : ILeagueHelp
     {
+        public string HelpOrgClanBan => "Ban a clan from an organization.";
+        public string HelpUnOrgClanBan => "Remove a clan ban from an organization";
         public string HelpLeaugeViewer => "Add or remove a role to view a league channel.";
         public string HelpEditWar => "Edit the result of a war. This will appear in scoreboard, but not in stats command.";
         public string HelpDivisions => "View the divisions in a given league.";

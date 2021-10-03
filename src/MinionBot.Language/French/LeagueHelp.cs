@@ -2,6 +2,8 @@
 {
 	public class LeagueHelp : ILeagueHelp
 	{
+		public string HelpOrgClanBan => "Ban a clan from an organization.";
+		public string HelpUnOrgClanBan => "Remove a clan ban from an organization";
 		public string HelpLeaugeViewer => new English.LeagueHelp().HelpLeaugeViewer;
 		public string HelpEditWar => new English.LeagueHelp().HelpEditWar;
 		public string HelpRemoveAllWars => new English.LeagueHelp().HelpRemoveAllWars;
