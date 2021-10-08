@@ -1,5 +1,7 @@
-# Minion Bot Languages
+# Minion Bot
 This repository is where the Minion Bot responses are stored. 
+
+## Adding a new language
 You don't have to be a programmer to add a new language. 
 Simply copy the files you want to edit here and paste into a simple text editor like Notepad (please do not use Word).
 Translate the bot's reponses, and then pass that to me over Discord. 
