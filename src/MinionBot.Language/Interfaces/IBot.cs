@@ -10,5 +10,6 @@
         string CheckTheParametersMissingPermission(string commandName);
         string CommandIsAlreadyRunning { get; }
         string IDontHavePermission(string type, string permission);
+        string YouDontHavePermission(string type, string permission);
     }
 }
