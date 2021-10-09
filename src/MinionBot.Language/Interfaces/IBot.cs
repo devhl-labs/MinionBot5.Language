@@ -9,5 +9,6 @@
         string CheckTheParametersNoClaimsMissingPermission(string commandName);
         string CheckTheParametersMissingPermission(string commandName);
         string CommandIsAlreadyRunning { get; }
+        string IDontHavePermission(string type, string permission);
     }
 }

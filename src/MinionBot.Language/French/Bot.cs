@@ -4,8 +4,8 @@ using System.Text;
 
 namespace MinionBot.Languages.French
 {
-    public class Bot : IBot
-    {
+	public class Bot : IBot
+	{
 		public string SomethingWentWrong { get; } =
 "Something went wrong, I'll let the developer know. You can also join the support server for help. <https://discord.gg/EEYAYGN>";
 		public string ChecksFailed { get; } =
@@ -20,6 +20,10 @@ $"Check the parameters and try again. For help with this command run `help {comm
 "Check the parameters and try again. For help try `help commandName` or join the support server. Some commands require you or the bot to have extra permissions. <https://discord.gg/EEYAYGN>";
 		public string CommandIsAlreadyRunning =>
 "This command is already running.";
+		public string IDontHavePermission(string type, string permission) =>
+$"I don't {type} permission for {permission}";
+		public string YouDontHavePermission(string type, string permission) =>
+$"You don't {type} permission for {permission}";
 
 	}
 }

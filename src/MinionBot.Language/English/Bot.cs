@@ -16,6 +16,9 @@ $"Check the parameters and try again. For help with this command run `help {comm
 "Check the parameters and try again. For help try `help commandName` or join the support server. Some commands require you or the bot to have extra permissions. <https://discord.gg/EEYAYGN>";
         public string CommandIsAlreadyRunning =>
 "This command is already running.";
-
+        public string IDontHavePermission(string type, string permission) =>
+$"I don't {type} permission for {permission}";
+        public string YouDontHavePermission(string type, string permission) =>
+$"You don't {type} permission for {permission}";
     }
 }
