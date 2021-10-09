@@ -8,5 +8,6 @@
         string CheckTheParameters(string commandName);
         string CheckTheParametersNoClaimsMissingPermission(string commandName);
         string CheckTheParametersMissingPermission(string commandName);
+        string CommandIsAlreadyRunning { get; }
     }
 }
