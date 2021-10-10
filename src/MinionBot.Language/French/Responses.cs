@@ -1,8 +1,4 @@
-﻿/*
-* Translation provided by RouletabilleDC
-*/
-
-namespace MinionBot.Languages.French
+﻿namespace MinionBot.Languages.French
 {
 	public class Responses : AbstractLanguage, ILanguage
 	{

@@ -1,8 +1,4 @@
-﻿/*
-* Translation provided by Mundelino
-*/
-
-namespace MinionBot.Languages.German
+﻿namespace MinionBot.Languages.German
 {
     public class Responses : AbstractLanguage, ILanguage
     {

@@ -5,4 +5,16 @@
     <AssemblyName>MinionBot.Languages</AssemblyName>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Update="French\README.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="German\README.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Italian\README.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
