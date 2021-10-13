@@ -18,8 +18,13 @@ $"Controlla i parametri e tenta nuovamente. Per informazioni su questo comando e
         public string CheckTheParametersMissingPermission(string commandName) =>
 "Controlla i parametri e tenta nuovamente. Per informazioni su questo comando esegui `help commandName` o unisciti al server di supporto. Alcuni comandi richiedono che tu o il bot abbiate permessi aggiuntivi. <https://discord.gg/EEYAYGN>";
 
-        public string IDontHavePermission(string type, string permission) => new Languages.English.Bot().IDontHavePermission(type, permission);
-
-        public string YouDontHavePermission(string type, string permission) => new Languages.English.Bot().YouDontHavePermission(type, permission);
+        public string IDontHaveChannelPermission(string permission) =>
+$"I don't channel permission for {permission}";
+        public string IDontHaveServerPermission(string permission) =>
+$"I don't server permission for {permission}";
+        public string YouDontHaveChannelPermission(string permission) =>
+$"You don't channel permission for {permission}";
+        public string YouDontHaveServerPermission(string permission) =>
+$"You don't server permission for {permission}";
     }
 }

@@ -9,7 +9,9 @@
         string CheckTheParametersNoClaimsMissingPermission(string commandName);
         string CheckTheParametersMissingPermission(string commandName);
         string CommandIsAlreadyRunning { get; }
-        string IDontHavePermission(string type, string permission);
-        string YouDontHavePermission(string type, string permission);
+        string IDontHaveChannelPermission(string permission);
+        string IDontHaveServerPermission(string permission);
+        string YouDontHaveChannelPermission(string permission);
+        string YouDontHaveServerPermission(string permission);
     }
 }
