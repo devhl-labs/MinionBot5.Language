@@ -16,6 +16,7 @@
 		public IWarHelp WarHelp { get; } = new WarHelp();
 		public IStatsHelp StatsHelp { get; } = new StatsHelp();
 		public IBot Bot { get; } = new Bot();
+		public IHelpMenu HelpMenu { get; } = new English.HelpMenu();
 
 
 		public string ThisLeagueIsInactive

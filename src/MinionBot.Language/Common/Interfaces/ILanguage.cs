@@ -19,6 +19,7 @@ namespace MinionBot.Languages
         IPatreonHelp PatreonHelp { get; }
         IWarHelp WarHelp { get; }
         IStatsHelp StatsHelp { get; }
+        IHelpMenu HelpMenu { get; }
 
 
         string AllRolesCanBeManaged { get; }

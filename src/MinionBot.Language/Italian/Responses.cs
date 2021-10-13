@@ -17,6 +17,7 @@
         public IPatreonHelp PatreonHelp { get; } = new PatreonHelp();
         public IWarHelp WarHelp { get; } = new WarHelp();
         public IStatsHelp StatsHelp { get; } = new StatsHelp();
+        public IHelpMenu HelpMenu { get; } = new English.HelpMenu();
 
 
         public string ThisLeagueIsInactive
