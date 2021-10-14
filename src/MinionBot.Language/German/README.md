@@ -1,1 +1,1 @@
-﻿Translation provided by Mundelino
+﻿Translations courtesy of Mundelino

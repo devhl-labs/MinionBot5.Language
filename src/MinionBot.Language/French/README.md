@@ -1,1 +1,1 @@
-﻿Translation provided by RouletabilleDC
+﻿Translations courtesy of RouletabilleDC
