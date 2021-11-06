@@ -17,12 +17,12 @@ $"Check the parameters and try again. For help with this command run `help {comm
         public string CommandIsAlreadyRunning =>
 "This command is already running.";
         public string IDontHaveChannelPermission(string permission) =>
-$"I don't channel permission for {permission}";
+$"I don't have channel permission for {permission}";
         public string IDontHaveServerPermission(string permission) =>
-$"I don't server permission for {permission}";
+$"I don't have server permission for {permission}";
         public string YouDontHaveChannelPermission(string permission) =>
-$"You don't channel permission for {permission}";
+$"You don't have channel permission for {permission}";
         public string YouDontHaveServerPermission(string permission) =>
-$"You don't server permission for {permission}";
+$"You don't have server permission for {permission}";
     }
 }
