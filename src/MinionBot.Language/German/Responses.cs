@@ -366,7 +366,7 @@
             => "Dieser Kanal wird nicht länger ignoriert.";
 
         public string WarChannelFailed
-            => "Dieser Befehl setzt voraus, dass dieser Server gesponsert wird. Wenn du ein Patron bist, musst du erst den `sponsorserver` Befehl ausführen. Außerdem brauchen du und ich die Berechtigung Kanäle zu bearbeiten.";
+            => "Dieser Befehl setzt voraus, dass dieser Server gesponsert wird. Wenn du ein Patron bist, musst du erst den `sponsorserver` Befehl ausführen. Außerdem brauchen du und ich die Berechtigung Kanäle zu bearbeiten. If all these conditions are met, ensure you provided the correct parameters.";
 
         public string BecomeAPatronToDownloadThis
             => "Du musst ein Patron sein um dies in einer Datei runterladen zu können. Wenn du dein Patron bist stelle sicher, dass ich die Berechtigung habe Dateien zu senden.";

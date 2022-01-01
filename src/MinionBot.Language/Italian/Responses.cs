@@ -362,7 +362,7 @@
             => "Non ignoro più questo canale.";
 
         public string WarChannelFailed
-            => "Questo comando richiede che il server sia sponsorizzato. Se sei un patron, esegui prima il comando sponsorserver. Tu e io dobbiamo avere il permesso di gestire i canali nel server o nel canale, a seconda dei parametri che hai fornito.";
+            => "Questo comando richiede che il server sia sponsorizzato. Se sei un patron, esegui prima il comando sponsorserver. Tu e io dobbiamo avere il permesso di gestire i canali nel server o nel canale, a seconda dei parametri che hai fornito. If all these conditions are met, ensure you provided the correct parameters.";
 
         public string BecomeAPatronToDownloadThis
             => "Diventa un patron per ottenere il file scaricabile! Se sei un patron, assicurati che io abbia il permesso di allegare file in questo canale.";

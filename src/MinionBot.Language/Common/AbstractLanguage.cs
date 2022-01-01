@@ -180,7 +180,7 @@ namespace MinionBot.Languages
                 new CommandInfo(0, "freshemote", Language.PatreonHelp.HelpFreshEmote, "attackEmoji defennseEmoji"),
                 new CommandInfo(5, "freshattack", Language.PatreonHelp.HelpFreshAttack, "attackEmoji"),
                 new CommandInfo(5, "freshdefense", Language.PatreonHelp.HelpFreshDefense, "defenseEmoji"),
-                new CommandInfo(5, "hideattacks", Language.PatreonHelp.HelpHideAttacks,
+                new CommandInfo(5, "resetstats", Language.PatreonHelp.HelpHideAttacks,
                     "[true/false]",
                     "#villageTag [true/false]",
                     "#villageTag townhall [true/false]",

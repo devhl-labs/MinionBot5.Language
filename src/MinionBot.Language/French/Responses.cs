@@ -371,7 +371,7 @@
 			=> "Je n'ignore désormais plus ce salon.";
 
 		public string WarChannelFailed
-			=> "Cette commande requiert ce serveur d'être sponsorisé. Si vous êtes un patron, utilisez la commande `sponsorserver`. Vous et moi devons avoir la permission de gérer les salons dans la guilde ou le salon; cela dépend des paramètres que vous avez fourni.";
+			=> "Cette commande requiert ce serveur d'être sponsorisé. Si vous êtes un patron, utilisez la commande `sponsorserver`. Vous et moi devons avoir la permission de gérer les salons dans la guilde ou le salon; cela dépend des paramètres que vous avez fourni. If all these conditions are met, ensure you provided the correct parameters.";
 
 		public string BecomeAPatronToDownloadThis
 			=> "Devenez un patron pour obtenir de ceci un lien téléchargeable! Si vous êtes un patron, soyez sûr que j'ai la permission d'envoyer des dossiers dans ce salon.";

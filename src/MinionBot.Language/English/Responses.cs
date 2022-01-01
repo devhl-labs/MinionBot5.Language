@@ -362,7 +362,7 @@
             => "No longer ignoring this channel.";
 
         public string WarChannelFailed
-            => "This command requires this server be sponsored. If you are a patron, run the sponsorserver command first. You and I must have manage channels permission on the guild or the channel, depending on what paramters you provided.";
+            => "This command requires this server be sponsored. If you are a patron, run the sponsorserver command first. You and I must have manage channels permission on the guild or the channel, depending on what paramters you provided. If all these conditions are met, ensure you provided the correct parameters.";
 
         public string BecomeAPatronToDownloadThis
             => "Become a patron to get this in a downloadable file! If you are a patron, ensure I have permission to attach files in this channel.";
