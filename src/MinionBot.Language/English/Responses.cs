@@ -79,6 +79,9 @@
         public string ClanUnclaimedFromAllServers(string clanTag, string clanName)
             => $"You have unclaimed {clanTag} {clanName} from all servers.";
 
+        public string DefaultClanUnclaimedFromAllServers(string clanTag, string clanName)
+            => $"{ ClanUnclaimedFromAllServers(clanTag, clanName) } This server no longer has a default clan. You can `claimclan` or go to another channel with a clan claimed and run `defaultclan`.";
+
         public string RegistrantCantBeRemoved(string clanTag, string clanName)
             => $"{clanTag} {clanName} cannot be removed. Ensure all wars are removed first then try again.";
 
