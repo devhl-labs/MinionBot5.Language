@@ -20,7 +20,7 @@ namespace MinionBot.Languages
                     "none",
                     "#clanTag",
                     "\"all\" #clanTag"),
-                new CommandInfo(1, "defaultclan", Language.ManagementHelp.HelpDefaultClan, "none", "#clanTag"),
+                new CommandInfo(1, "defaultclan", Language.ManagementHelp.HelpDefaultClan, "none", "#clanTag", "\"none\""),
                 new CommandInfo(1, "myclan", Language.ManagementHelp.HelpMyClan),
                 new CommandInfo(1, "myclans", Language.ManagementHelp.HelpMyClans),
                 new CommandInfo(1, "myserver", Language.ManagementHelp.HelpMyServer),

@@ -59,6 +59,9 @@
         public string NewClanDefault(string clanTag, string clanName)
             => $"{clanTag} {clanName} ist nun der standard Clan für diesen Server.";
 
+        public string DefaultClanRemoved
+            => "There is no longer a default clan.";
+
         public string ClanNotClaimed(string clanTag, string clanName)
             => $"{clanTag} {clanName} wurde nicht in diesem Server festgelegt. Starte mit `claimclan {clanTag}`.";
 

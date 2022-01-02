@@ -108,6 +108,7 @@ namespace MinionBot.Languages
         string DeletedXRoles(int count);
         string IsNowThePreferredAlias(string alias, string villageTag, string villageName);
         string NewClanDefault(string clanTag, string clanName);
+        string DefaultClanRemoved { get; }
         string NoAttacksLeft(string enemyClanTag, string enemyClanName);
         string NoLeagueWarsFoundInLastSixDays(string leagueInitials);
         string NoParticipatingClanFound(string dbParticipantName, string leagueInitials, int season);

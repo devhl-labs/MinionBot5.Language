@@ -56,7 +56,10 @@
             => "Le statistiche saranno ora considerate. Gli attacchi in questa guerra saranno presi in considerazione per le classifiche.";
 
         public string NewClanDefault(string clanTag, string clanName)
-            => $"{clanTag} {clanName} ora è il clan predefinito per questo server.";
+            => $"{clanTag} {clanName} ora è il clan predefinito per questo server."; 
+        
+        public string DefaultClanRemoved
+            => "There is no longer a default clan.";
 
         public string ClanNotClaimed(string clanTag, string clanName)
             => $"{clanTag} {clanName} non è rivendicato in questo server. Utilizza `claimclan {clanTag}`.";
