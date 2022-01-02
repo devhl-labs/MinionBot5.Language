@@ -47,7 +47,7 @@
             => "Questo comando non è disponibile né per CWL né per guerre di leghe competitive.";
 
         public string MustClaimClan
-            => "Devi prima rivendicare un clan. Prova a utilizzare il comando `claimclan #clanTag`.";
+            => "Devi prima rivendicare un clan. Prova a utilizzare il comando `claimclan #clanTag`. If the clan is claimed in another channel in this server, go to that channel and run `defaultclan`.";
 
         public string NoStatsEnabled
             => "Le statistiche non saranno più considerate. Gli attacchi in questa guerra non saranno presi in considerazione per comandi come botleader, villageleader, etc.";
@@ -72,6 +72,9 @@
 
         public string ClanUnclaimed(string clanTag, string clanName)
             => $"Hai scollegato {clanTag} {clanName}.";
+
+        public string DefaultClanUnclaimed(string clanTag, string clanName)
+            => $"{ ClanUnclaimed(clanTag, clanName)} This server no longer has a default clan. You can `claimclan` or go to another channel with a clan claimed and run `defaultclan`.";
 
         public string ClanUnclaimedFromAllServers(string clanTag, string clanName)
             => $"Hai scollegato {clanTag} {clanName} da tutti i server.";

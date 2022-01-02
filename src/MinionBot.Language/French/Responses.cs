@@ -55,7 +55,7 @@
 			=> "Cette commande n'est pas disponible ni pour les CWL ni pour les ligues compétitives.";
 
 		public string MustClaimClan
-			=> "Vous devez d'abord enregistrer votre clan en utilisant la commande `claimclan #clanTag`.";
+			=> "Vous devez d'abord enregistrer votre clan en utilisant la commande `claimclan #clanTag`. If the clan is claimed in another channel in this server, go to that channel and run `defaultclan`.";
 
 		public string NoStatsEnabled
 			=> "Les statistiques ne compteront plus et les attaques dans cette guerre ne seront plus éligibles pour les commandes comme villageleader.";
@@ -81,6 +81,8 @@
 		public string ClanUnclaimed(string clanTag, string clanName)
 			=> $"Vous avez désenregistré {clanTag} {clanName}.";
 
+		public string DefaultClanUnclaimed(string clanTag, string clanName)
+			=> $"{ ClanUnclaimed(clanTag, clanName)} This server no longer has a default clan. You can `claimclan` or go to another channel with a clan claimed and run `defaultclan`.";
 
 		public string ClanUnclaimedFromAllServers(string clanTag, string clanName)
 			=> $"Vous avez désenregistré {clanTag} {clanName} de tous les serveurs.";

@@ -47,7 +47,7 @@
             => "Эта команда не доступна для ЛВК или лиг.";
 
         public string MustClaimClan
-            => "Сначала привяжите клан. Используйте команду `claimclan #clanTag`.";
+            => "Сначала привяжите клан. Используйте команду `claimclan #clanTag`. If the clan is claimed in another channel in this server, go to that channel and run `defaultclan`.";
 
         public string NoStatsEnabled
             => "Статистика больше не учитывается. Атаки с этой войны не будут учтены для команд botleader, villageleader, и др.";
@@ -72,6 +72,9 @@
 
         public string ClanUnclaimed(string clanTag, string clanName)
             => $"Вы отвязали клан {clanTag} {clanName}.";
+
+        public string DefaultClanUnclaimed(string clanTag, string clanName)
+            => $"{ ClanUnclaimed(clanTag, clanName)} This server no longer has a default clan. You can `claimclan` or go to another channel with a clan claimed and run `defaultclan`.";
 
         public string ClanUnclaimedFromAllServers(string clanTag, string clanName)
             => $"Вы отвязали клан {clanTag} {clanName} со всех серверов.";

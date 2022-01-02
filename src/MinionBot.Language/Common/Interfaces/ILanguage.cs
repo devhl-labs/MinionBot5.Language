@@ -100,6 +100,7 @@ namespace MinionBot.Languages
         string ClanNotClaimed();
         string ClanNotClaimed(string clanTag, string clanName);
         string ClanUnclaimed(string clanTag, string clanName);
+        string DefaultClanUnclaimed(string clanTag, string clanName);
         string RegistrantCantBeRemoved(string clanTag, string clanName);
         string ClanUnclaimedFromAllServers(string clanTag, string clanName);
         string CreatedXRoles(int count);

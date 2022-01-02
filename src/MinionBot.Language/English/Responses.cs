@@ -47,7 +47,7 @@
             => "This command is not available for CWL nor competitive league wars.";
 
         public string MustClaimClan
-            => "You must claim a clan first. Try using the `claimclan #clanTag` command.";
+            => "You must claim a clan first. Try using the `claimclan #clanTag` command. If the clan is claimed in another channel in this server, go to that channel and run `defaultclan`.";
 
         public string NoStatsEnabled
             => "Stats will no longer count. Attacks in this war will not be eligible for commands like botleader, villageleader, etc.";
@@ -72,6 +72,9 @@
 
         public string ClanUnclaimed(string clanTag, string clanName)
             => $"You have unclaimed {clanTag} {clanName}.";
+
+        public string DefaultClanUnclaimed(string clanTag, string clanName)
+            => $"{ ClanUnclaimed(clanTag, clanName )} This server no longer has a default clan. You can `claimclan` or go to another channel with a clan claimed and run `defaultclan`.";
 
         public string ClanUnclaimedFromAllServers(string clanTag, string clanName)
             => $"You have unclaimed {clanTag} {clanName} from all servers.";

@@ -48,7 +48,7 @@
             => "Dieser Befehl ist weder für CWL noch für Turnierkriege.";
 
         public string MustClaimClan
-            => "Du musst zuerst einen Clan festlegen. Benutze dafür den Befehl `claimclan #clanTag`.";
+            => "Du musst zuerst einen Clan festlegen. Benutze dafür den Befehl `claimclan #clanTag`. If the clan is claimed in another channel in this server, go to that channel and run `defaultclan`.";
 
         public string NoStatsEnabled
             => "Statistiken zählen nicht länger. Angriff in diesem Krieg sind nicht mehr für Befehle wie botleader, villageleader, etc. verfügbar.";
@@ -73,6 +73,9 @@
 
         public string ClanUnclaimed(string clanTag, string clanName)
             => $"Du hast {clanTag} {clanName} erfolgreich gelöst.";
+
+        public string DefaultClanUnclaimed(string clanTag, string clanName)
+            => $"{ ClanUnclaimed(clanTag, clanName)} This server no longer has a default clan. You can `claimclan` or go to another channel with a clan claimed and run `defaultclan`.";
 
         public string ClanUnclaimedFromAllServers(string clanTag, string clanName)
             => $"Du hast {clanTag} {clanName} erfolgreich von allen Servern gelöst.";
