@@ -3,7 +3,7 @@ This repository is where the Minion Bot responses are stored.
 
 ## Adding a new language
 You don't have to be a programmer to add a new language. 
-Start by downloading and unzipping [english responses](/responses-to-be-translated.zip)
+Start by downloading and unzipping [english responses](https://github.com/devhl-labs/MinionBot5.Language/raw/main/responses-to-be-translated.zip)
 Translate the reponses using a simple text editor like Notepad or VS Code (not Word).
 Once translated just send me the files over Discord.
 You don't have to translate everything. If no translation is provided, we can just default to English.
