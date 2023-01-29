@@ -72,6 +72,6 @@ ALIAS
 `Village tags can often be replaced with an alias or @discordMention.`";
 
         public string InviteMe => "Invite Me";
-        public string GetHelp => "Get Help";
+        public string GetHelp => "Support Server";
     }
 }
