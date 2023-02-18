@@ -8,8 +8,8 @@
 "Per aggiungerlo di nuovo, dovrai inserire nuovamente \"mb\" alla descrizione.";
 
         public string HelpDefaultClan =>
-@"Indica a Minion Bot quale clan usare nei canali in cui claimclan non è mai stato eseguito.
-Puoi utilizzarlo dopo aver eseguito un claimclan.
+@"Indica a Minion Bot quale clan usare nei canali in cui `/clans claims create` non è mai stato eseguito.
+Puoi utilizzarlo dopo aver eseguito un `/clans claims create`.
 Il primo clan che rivendichi in un server è automaticamente il clan predefinito.";
 
         public string HelpMyClans => "Visualizza tutti i clan che il tuo server ha rivendicato.";

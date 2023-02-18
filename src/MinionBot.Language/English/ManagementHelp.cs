@@ -8,8 +8,8 @@
 To add it back, you will need to add 'mb' to the description again.";
 
         public string HelpDefaultClan =>
-@"Allows you to tell Minion Bot which clan to use in channels where claimclan has never been ran.
-You may run this after running claimclan.
+@"Allows you to tell Minion Bot which clan to use in channels where `/clans claims create` has never been ran.
+You may run this after running `/clans claims create`.
 The first clan you claim in a server is automatcally the default clan.";
 
         public string HelpMyClans => "View all the clans your server has claimed.";

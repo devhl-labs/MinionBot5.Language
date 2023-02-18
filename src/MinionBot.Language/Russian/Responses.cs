@@ -47,7 +47,7 @@
             => "Эта команда не доступна для ЛВК или лиг.";
 
         public string MustClaimClan
-            => "Сначала привяжите клан. Используйте команду `claimclan #clanTag`. If the clan is claimed in another channel in this server, go to that channel and run `defaultclan`.";
+            => "Сначала привяжите клан. Используйте команду `/clans claims create #clanTag`";
 
         public string NoStatsEnabled
             => "Статистика больше не учитывается. Атаки с этой войны не будут учтены для команд botleader, villageleader, и др.";
@@ -62,7 +62,7 @@
             => "There is no longer a default clan.";
 
         public string ClanNotClaimed(string clanTag, string clanName)
-            => $"{clanTag} {clanName} не привязан на этом сервере. Используйте команду `claimclan {clanTag}`.";
+            => $"{clanTag} {clanName} не привязан на этом сервере. Используйте команду `/clans claims create {clanTag}`.";
 
         public string ClanNotClaimed()
             => $"На этом сервере нет привязанных кланов.";
@@ -74,19 +74,19 @@
             => $"Вы отвязали клан {clanTag} {clanName}.";
 
         public string DefaultClanUnclaimed(string clanTag, string clanName)
-            => $"{ ClanUnclaimed(clanTag, clanName)} This server no longer has a default clan. You can `claimclan` or go to another channel with a clan claimed and run `defaultclan`.";
+            => $"{ ClanUnclaimed(clanTag, clanName)} This server no longer has a default clan. You can run `/clans claims create` to claim another clan.";
 
         public string ClanUnclaimedFromAllServers(string clanTag, string clanName)
             => $"Вы отвязали клан {clanTag} {clanName} со всех серверов.";
 
         public string DefaultClanUnclaimedFromAllServers(string clanTag, string clanName)
-            => $"{ ClanUnclaimedFromAllServers(clanTag, clanName) } This server no longer has a default clan. You can `claimclan` or go to another channel with a clan claimed and run `defaultclan`.";
+            => $"{ ClanUnclaimedFromAllServers(clanTag, clanName) } This server no longer has a default clan. You can run `/clans claims create` to claim another clan.";
 
         public string RegistrantCantBeRemoved(string clanTag, string clanName)
             => $"{clanTag} {clanName} не может быть удален. Сначала надо удалить все войны с их участием, затем попробуйте снова.";
 
         public string ClaimClan
-            => "Добавьте буквы mb в конец описаняи клана в игре.\nЖдите несколько минут, запустите команду claimclan #clanTag.\nmb нужна только для безопасности, после можно удалить.";
+            => "Добавьте буквы mb в конец описаняи клана в игре.\nЖдите несколько минут, запустите команду `/clans claims create #clanTag`\nmb нужна только для безопасности, после можно удалить.";
 
         public string ThisVillageIsClaimed
             => "Деревня привязана.  Попросите колидера чтобы он отвязал ее для вас.";
@@ -181,7 +181,7 @@
             => "Эта команда только для приватных войн.";
 
         public string ThisChannelAlreadyHasAClanClaimed
-            => "В этом канале уже есть привязанный клан. Используйте команду `claimclan` в другом канале или отвяжите здесь клан командой `unclaimclan`.";
+            => "В этом канале уже есть привязанный клан. Используйте команду `/clans claims create` в другом канале или отвяжите здесь клан командой `/clans claims delete`";
 
         public string VillageIsNotInWar(string villageTag, string villageName)
             => $"{villageTag} {villageName} не в этой войне.";

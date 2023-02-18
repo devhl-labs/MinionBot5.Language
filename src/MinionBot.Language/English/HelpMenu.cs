@@ -30,12 +30,12 @@ Click the Get Help button below for more help.";
         public string HowDoIClaimMyClanDescription =>
 @"Edit your clan description so it ends with `mb`
 Wait two minutes.
-Run `claimclan #clanTag` where #clanTag is YOUR clan tag.
+Run `/clans claims create #clanTag` where #clanTag is YOUR clan tag.
 REMOVE `mb` from the description so no one else can claim your clan.
 
 Does my war log have to be public?  If you want attacks posted, YES!
 
-Can I claim multiple clans? YES! Just run claimclan in different channels.";
+Can I claim multiple clans? YES! Just run `/clans claims create` in different channels.";
 
         public string WhatDoTheSymbolsMean => "What do the symbols mean?";
         public string HelpSettingUpMyServer => "I need help setting up my server.";

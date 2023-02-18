@@ -30,14 +30,14 @@ Click the Get Help button below for more help.";
         public string HowDoIClaimMyClanDescription =>
 @"Editez votre description de clan de façon à ce que ça se termine avec `mb`.
 Attendez deux minutes.
-Utilisez `claimclan #TagClan` où #TagClan est VOTRE tag de clan.
+Utilisez `/clans claims create #TagClan` où #TagClan est VOTRE tag de clan.
 Supprimez `mb` de votre description de façon à ce que votre clan ne puisse être lié à nouveau par quelqu'un d'autre.
 
 
 Est-ce que mon journal de guerre doit être public? Si vous voulez que les attaques soient postées, OUI!
 
 
-Puis-je lier plusieurs clans? OUI! Utilisez la commande claimclan dans différents salons.";
+Puis-je lier plusieurs clans? OUI! Utilisez la commande `/clans claims create` dans différents salons.";
 
         public string WhatDoTheSymbolsMean => "Que veut dire ce symbole ?";
         public string HelpSettingUpMyServer => "J'ai besoin d'aide pour paramétrer mon serveur.";

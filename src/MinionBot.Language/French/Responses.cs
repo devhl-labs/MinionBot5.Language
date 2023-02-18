@@ -55,7 +55,7 @@
 			=> "Cette commande n'est pas disponible ni pour les CWL ni pour les ligues compétitives.";
 
 		public string MustClaimClan
-			=> "Vous devez d'abord enregistrer votre clan en utilisant la commande `claimclan #clanTag`. If the clan is claimed in another channel in this server, go to that channel and run `defaultclan`.";
+			=> "Vous devez d'abord enregistrer votre clan en utilisant la commande `/clans claims create #clanTag`";
 
 		public string NoStatsEnabled
 			=> "Les statistiques ne compteront plus et les attaques dans cette guerre ne seront plus éligibles pour les commandes comme villageleader.";
@@ -70,7 +70,7 @@
 			=> "There is no longer a default clan.";
 
 		public string ClanNotClaimed(string clanTag, string clanName)
-			=> $"{clanTag} {clanName} n'est pas enregistré sur ce serveur. Commencez avec `claimclan {clanTag}`.";
+			=> $"{clanTag} {clanName} n'est pas enregistré sur ce serveur. Commencez avec `/clans claims create {clanTag}`.";
 
 		public string ClanNotClaimed()
 			=> $"Ce serveur n'a aucun de ces clans d'enregistrés.";
@@ -82,19 +82,19 @@
 			=> $"Vous avez désenregistré {clanTag} {clanName}.";
 
 		public string DefaultClanUnclaimed(string clanTag, string clanName)
-			=> $"{ ClanUnclaimed(clanTag, clanName)} This server no longer has a default clan. You can `claimclan` or go to another channel with a clan claimed and run `defaultclan`.";
+			=> $"{ ClanUnclaimed(clanTag, clanName)} This server no longer has a default clan. You can run `/clans claims create` to claim another clan.";
 
 		public string ClanUnclaimedFromAllServers(string clanTag, string clanName)
 			=> $"Vous avez désenregistré {clanTag} {clanName} de tous les serveurs.";
 		
 		public string DefaultClanUnclaimedFromAllServers(string clanTag, string clanName)
-	=>		$"{ ClanUnclaimedFromAllServers(clanTag, clanName) } This server no longer has a default clan. You can `claimclan` or go to another channel with a clan claimed and run `defaultclan`.";
+	=>		$"{ ClanUnclaimedFromAllServers(clanTag, clanName) } This server no longer has a default clan. You can run `/clans claims create` to claim another clan.";
 
 		public string RegistrantCantBeRemoved(string clanTag, string clanName)
 			=> $"{clanTag} {clanName} ne peut être retiré. Soyez sûrs que toutes les guerres sont retirées d'abord, puis réessayez.";
 
 		public string ClaimClan
-			=> "Ajoutez les lettres mb à la fin de la description du clan. Attendez quelques minutes puis tapez claimclan #clanTag.\nmb n'est uniquement nécessaire pour la sécurité et peut être retiré après l'enregistrement du clan.";
+			=> "Ajoutez les lettres mb à la fin de la description du clan. Attendez quelques minutes puis tapez `/clans claims create #clanTag`.\nmb n'est uniquement nécessaire pour la sécurité et peut être retiré après l'enregistrement du clan.";
 
 		public string ThisVillageIsClaimed
 			=> "Ce village est enregistré. Demandez à un adjoint de désenregistrer le clan pour vous.";
@@ -189,7 +189,7 @@
 			=> "This command is only for private wars.";
 
 		public string ThisChannelAlreadyHasAClanClaimed
-			=> "This channel already has a clan claimed. You can run `claimclan` in a different channel, or run `unclaimclan` here.";
+			=> "This channel already has a clan claimed. You can run `/clans claims create` in a different channel, or run `/clans claims delete` here.";
 
 		public string VillageIsNotInWar(string villageTag, string villageName)
 			=> $"{villageTag} {villageName} is not in this war.";

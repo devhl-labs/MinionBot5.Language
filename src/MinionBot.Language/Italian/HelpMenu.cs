@@ -30,12 +30,12 @@ Clicca il bottone Ottieni Supporto qui sotto per ulteriori indicazioni.";
         public string HowDoIClaimMyClanDescription =>
 @"Modifica la descrizione del tuo clan in gioco in modo che finisca con `mb`.
 Aspetta un paio di minuti.
-Esegui `claimclan #clanTag` dove #clanTag è il tag del TUO clan.
+Esegui `/clans claims create #clanTag` dove #clanTag è il tag del TUO clan.
 RIMUOVI `mb` dalla descrizione del clan in modo che nessun'altro possa rivendicare il tuo clan.
 
 Il mio registro di guerra deve essere pubblico?  Se vuoi che i tuoi attacchi siano pubblicati, SI!
 
-Posso rivendicare più clan? SI! Ti basta eseguire il comando claimclan in canali diversi.";
+Posso rivendicare più clan? SI! Ti basta eseguire il comando `/clans claims create` in canali diversi.";
 
         public string WhatDoTheSymbolsMean => "Cosa significano i simboli?";
         public string HelpSettingUpMyServer => "Ho bisogno di aiuto per impostare il mio server.";
